@@ -2,16 +2,27 @@ var app = angular.module('group', ['ngRoute'])
 
 	app.config(function($routeProvider) {
 		$routeProvider
-		.when('/login', {
-			templateUrl: "js/views/loginTmpl.html",
-			controller:  "loginCtrl"
+		.when('/', {
+			templateUrl: "js/views/homeTmpl.html",
+			controller:  "homeCtrl"
+		})
+		.when('/register', {
+			templateUrl: 'js/views/registerTmpl.html',
+			controller: 'registerCtrl'
+		})
+		.when('/user/dashboard', {
+			templateUrl: 'js/views/userTmpl.html',
+			controller: 'userCtrl'
+		})
+		.when('/bootcamp/dashboard', {
+			templateUrl: 'js/views/bootcampTmpl.html',
+			controller: 'bootcampCtrl'
 		})
 		.when('/projects', {
 			templateUrl: "js/views/projectTmpl.html",
-			controller: "projectCtrl",
-		
+			controller: "projectCtrl"
 		})
 		.otherwise({
-			redirectTo: "/login"
+			redirectTo: "/"
 		})
 	})
