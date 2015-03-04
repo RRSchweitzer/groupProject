@@ -61,7 +61,9 @@ Passport.use(new GithubStrategy({
 	clientSecret: '34062aa6e6f4711ca6822b0bb3240d06074dcafb',
 	callbackURL: 'http://localhost:8888/auth/github/callback'
 }, 
-userCtrl.updateOrCreate
+function (token, refreshToken, profile, done) {
+	return done(null, profile);
+}
 ));
 
 
@@ -73,7 +75,7 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
 	Passport.authenticate('github',{ failureRedirect: '/#/login'}),
 	function(req, res) {
-		res.redirect('/#/projects');
+		res.redirect('/#/register');
 	});
 
 var requireAuth = function (req, res, next) {
