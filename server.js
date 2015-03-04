@@ -27,7 +27,9 @@ db.once('open', function() {
 app.use(Express.static(__dirname+'/Public'));
 app.use(BodyParser.json());
 app.use(Session({
-	secret: 'JFDSF98hew98h8hDSOIFoiDiji3333'
+	secret: 'JFDSF98hew98h8hDSOIFoiDiji3333',
+	saveUninitialized: true,
+	resave:true
 }));
 app.use(Passport.initialize());
 app.use(Passport.session());
@@ -59,7 +61,8 @@ Passport.use(new GithubStrategy({
 	clientSecret: '34062aa6e6f4711ca6822b0bb3240d06074dcafb',
 	callbackURL: 'http://localhost:8888/auth/github/callback'
 }, 
-	userCtrl.updateOrCreate)) 
+userCtrl.updateOrCreate
+));
 
 
 
@@ -68,11 +71,10 @@ app.get('/auth/github',
 	Passport.authenticate('github'))
 
 app.get('/auth/github/callback',
-	Passport.authenticate('github',
-		{
-			successRedirect: '/#/projectTmpl.html',
-			failureRedirect: '/'
-		}));
+	Passport.authenticate('github',{ failureRedirect: '/#/login'}),
+	function(req, res) {
+		res.redirect('/#/projects');
+	});
 
 var requireAuth = function (req, res, next) {
 	if (!req.isAuthenticated()) {
