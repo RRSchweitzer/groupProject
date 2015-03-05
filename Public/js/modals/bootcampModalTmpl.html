@@ -1,19 +1,25 @@
 <form class="modal-view">
-	<div class="form-group">
-    <label for="Name">Name</label>
-    <input type="text" class="form-control" id="nameInput" ng-model='name' placeholder="Name">
+  <div class="form-group">
+    <label for="Name">Bootcamp Name</label>
+    <input type="text" class="form-control" id="nameInput" ng-model='name' placeholder="Bootcamp Name">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">City</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" ng-model='city' placeholder="City">
+    <label for="Name">Bootcamp Url</label>
+    <input type="text" class="form-control" id="nameInput" ng-model='url' placeholder="Paste Url">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">State</label>
-    <input ng-model='state' type="text" class="form-control" id="exampleInputPassword1" placeholder="State">
+    <label for="city">City</label>
+    <input type="text" class="form-control" id="cityInput" ng-model='city' placeholder="City">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Housing</label>
-    <input ng-model='housing' type="text" class="form-control" id="exampleInputPassword1" placeholder="Housing">
+    <label for="state">State</label>
+    <input ng-model='state' type="text" class="form-control" id="stateInput" placeholder="State">
+  </div>
+  <div class="form-group">
+  	<p class='help-block'>Does your boot camp offer housing?</p>
+    <label for="housing">
+    	<input type='checkbox' ng-model='checkboxModel.value1'> Yes
+    </label>
   </div>
 	  <div class="modal-footer">
 		    <button class="btn btn-primary" ng-click="submit()">Submit</button>

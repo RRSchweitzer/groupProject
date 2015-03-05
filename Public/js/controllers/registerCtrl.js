@@ -1,6 +1,6 @@
 var app = angular.module('group');
 
-app.controller('registerCtrl', function($scope, $log, $modal, registerService) {
+app.controller('registerCtrl', function($scope, $log, $modal, $location, registerService) {
 	
 		$scope.user = registerService.getUser().then(function (res) {
 			console.log(res);
@@ -38,9 +38,11 @@ app.controller('registerCtrl', function($scope, $log, $modal, registerService) {
 			}
 		})
 
-		modalInstance.result.then(function(data) {
-			console.log(data);
-			registerService.saveBootcamp(data);
+		modalInstance.result.then(function(newBootcamp) {
+			console.log(newBootcamp);
+			registerService.saveBootcamp(newBootcamp).then(function(result) {
+				$location.path('/projects')
+			});
 		})
 	}
 
