@@ -9,7 +9,7 @@ app.controller('bootcampModalCtrl', function($scope, $log, $modalInstance, bootc
 
 	$scope.submit = function  () {
 		var newBootcamp = {
-			name: $scope.name
+			name: $scope.name,
 			githubId: bootcampObj.id,
 			gitLink: bootcampObj.profileUrl,
 			profilePic: bootcampObj._json.avatar_url,

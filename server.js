@@ -49,12 +49,8 @@ Passport.deserializeUser(function(obj, done) {
 app.get('/api/user/userInfo', function (req, res) {
 	res.status(200).json(req.user)
 })
-// app.get('/api/user', userCtrl.getUser);
-// app.get('/api/users', userCtrl.getUsers);
 
-// app.get('/api/bootcamp', bootcampCtrl.getBootcamp);
-// app.get('/api/bootcamps', bootcampCtrl.getBootcamps);
-
+app.post('/api/user', userCtrl.updateOrCreate)
 app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
 
 
