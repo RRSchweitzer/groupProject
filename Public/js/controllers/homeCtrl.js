@@ -1,6 +1,6 @@
 var app = angular.module('group');
 
-app.controller('homeCtrl', function($scope) {
+app.controller('homeCtrl', function($scope, $log) {
 	
 //menu dropdown in index.hmtl js
 	$scope.status = {
