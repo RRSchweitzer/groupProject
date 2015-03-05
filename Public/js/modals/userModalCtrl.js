@@ -11,7 +11,7 @@ app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj) 
 
 	$scope.submit = function  () {
 		var newUser = {
-			name: userObj.displayName,
+			name: $scope.name,
 			githubId: userObj.id,
 			gitLink: userObj.profileUrl,
 			profilePic: userObj._json.avatar_url,
