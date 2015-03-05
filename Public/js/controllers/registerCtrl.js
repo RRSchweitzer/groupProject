@@ -36,6 +36,11 @@ app.controller('registerCtrl', function($scope, $log, $modal, registerService) {
 				}
 			}
 		})
+
+		modalInstance.result.then(function(data) {
+			console.log(data);
+			registerService.saveBootcamp(data);
+		})
 	}
 
 })

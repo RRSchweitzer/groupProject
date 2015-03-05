@@ -3,15 +3,22 @@ var app = angular.module('group');
 app.controller('bootcampModalCtrl', function($scope, $log, $modalInstance, bootcampObj) {
 
 	console.log('user info from registerCtrl')
-	console.log(userObj);
+	console.log(bootcampObj);
+
+	$scope.name = bootcampObj._json.name
 
 	$scope.submit = function  () {
 		var newBootcamp = {
-			name: userObj.displayName,
-			githubId: userObj.id,
-			gitLink: userObj.profileUrl,
-			profilePic: userObj._json.avatar_url,
-			accountType: userObj._json.type
+			name: $scope.name
+			githubId: bootcampObj.id,
+			gitLink: bootcampObj.profileUrl,
+			profilePic: bootcampObj._json.avatar_url,
+			accountType: bootcampObj._json.type,
+			location: {
+				city: $scope.city,
+				state: $scope.state
+			},
+			housing: $scope.housing
 		}
 		
 		$modalInstance.close(newBootcamp)
