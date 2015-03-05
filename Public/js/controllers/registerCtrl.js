@@ -11,6 +11,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, registerService) {
 		var modalInstance = $modal.open({
 			templateUrl: 'js/modals/userModalTmpl.html',
 			controller: 'userModalCtrl',
+			windowClass: 'modals',
 			size: 'lg',
 			resolve: {
 				userObj: function () {

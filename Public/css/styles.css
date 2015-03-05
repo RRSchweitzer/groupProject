@@ -39,4 +39,25 @@ body, html {
   float: right;
 }
 
+<<<<<<< HEAD
 /*end fixed navbar*/
+=======
+
+/*Register CSS*/
+.register-buttons {
+  margin-top: 80px;
+}
+
+/*Modals*/
+.modals {
+  margin-top: 120px;
+  z-index: 10;
+}
+.modal-view {
+  margin: 15px;
+}
+
+
+
+
+>>>>>>> upstream/master
