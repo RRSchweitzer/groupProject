@@ -29,15 +29,14 @@ body, html {
   padding-top: 20px;
 }
 
-/*.github-icon {
+.github-icon {
   float: right;
   margin-right: 10px;
-  margin-top: 20px;
-}*/
+  margin-top: 80px;
+}
 
 .btn-group {
   float: right;
 }
-
 
 /*end fixed navbar*/
