@@ -1,9 +1,11 @@
-/*Fixed Navbar */
+/*Fixed Navbar--------------------------------- */
 body, html {
   width: 100%;
   height: 100%;
   margin: 0px;
+  background-image: url("/images/squairy_light.png"); 
 }
+
 .row {
   margin-right: 0px;
   margin-left: 0px;
@@ -14,19 +16,21 @@ body, html {
   left: 0;
   z-index: 9999;
   width: 100%;
-  height: 70px;
-  background-color: #00a087;
+  height: 100px;
+  background-color: #565A5C;
   margin-right: 0px;
 }
 
 .logo-box {
-  width: 10px;
-  height: 100%;
-  background: black;
+  width: 5%;
+  height: 70%;
+  background: #FF4486;
   margin-left: 20px;
   color: white;
   text-align: center;
   padding-top: 20px;
+  margin-top: 10px;
+  border-radius: 8px;
 }
 
 .github-icon {
@@ -37,9 +41,87 @@ body, html {
 
 .btn-group {
   float: right;
+  margin-top: 40px;
+  margin-right: 88px;
 }
 
-/*Register CSS*/
+.btn-primary {
+  background: #0090C5;
+}
+
+/*homepage -------------------------------*/
+
+.banner-wrapper {
+  width: 100%;
+  height:450px;
+  /*background: #EDEDED;*/
+  padding: 30px;
+}
+.banner-container {
+  display: flex;
+  width: 80%;
+  height: 310px;
+  background: white;
+  margin: auto;
+  margin-top: 100px;
+  border-radius: 6px;
+}
+.box {
+  width: 50%;
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.welcome-message {
+  margin-top: 150px;
+}
+
+.button-container {
+  width: 100%;
+  height: 50%;
+  border: 1px solid black;
+}
+
+.col-md-12 {
+  height: 155px;
+}
+
+.btn-group-lg {
+  background: #0090C5;
+  height: 110px;
+  width: 350px;
+  margin: 40px;
+  border-radius: 8px;
+}
+
+.top-button {
+  margin-bottom: 10px;
+}
+
+.bottom-button {
+  margin-top: 1px;
+}
+
+.button-message {
+  width: 60%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+/*.button-icon {
+  width: 40%;
+  height:100%;
+  border: 1px solid black;
+}*/
+
+/*.button-icon-2 {
+  width: 40%;
+  height: 100%;
+  border: 1px solid black;
+}*/
+
+/*register css*/
 .register-buttons {
   margin-top: 80px;
 }
@@ -52,4 +134,7 @@ body, html {
 .modal-view {
   margin: 15px;
 }
+
+
+
 
