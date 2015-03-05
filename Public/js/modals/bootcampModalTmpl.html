@@ -1,16 +1,23 @@
-<input type="text" ng-model="data" />
-	<div class="modal-view">
-	    <div>
-		    <div>Bootcamp Name: </div><input ng-model="">
-		    <div>Program Length: </div><input ng-model="">
-		    <div>Avg Class Size: </div><input ng-model="">
-		    <div>Languages / Frameworks:</div><input ng-model="">
-		    <div>Cost</div><input ng-model="">
-		    <div>Housing:</div><input ng-model="">
-	    </div>
-
+<form class="modal-view">
+	<div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" class="form-control" id="nameInput" ng-model='name' placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">City</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" ng-model='city' placeholder="City">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">State</label>
+    <input ng-model='state' type="text" class="form-control" id="exampleInputPassword1" placeholder="State">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Housing</label>
+    <input ng-model='housing' type="text" class="form-control" id="exampleInputPassword1" placeholder="Housing">
+  </div>
 	  <div class="modal-footer">
-	    <button class="btn btn-primary" ng-click="submit()">Submit</button>
-	    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
-	 	</div>
+		    <button class="btn btn-primary" ng-click="submit()">Submit</button>
+		    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+		</div>
 	</div>
+</form>

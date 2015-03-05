@@ -8,5 +8,13 @@ app.service('registerService', function($http) {
 			url: 'api/user/userinfo'
 		})
 	}
+
+	this.saveBootcamp = function (bootcampObj) {
+		return $http({
+			method: 'POST',
+			url: 'api/bootcamp',
+			data: bootcampObj
+		})
+	}
 		
 })
