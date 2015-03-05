@@ -24,8 +24,8 @@ app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj) 
 		$modalInstance.close(newUser)
 		}
 
-	// $scope.cancel = function () {
-	// 	$modalInstance.dismiss('cancel');
-	// }
+	$scope.cancel = function () {
+		$modalInstance.dismiss('cancel');
+	}
 
 });
