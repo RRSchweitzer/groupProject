@@ -5,11 +5,14 @@ app.controller('bootcampModalCtrl', function($scope, $log, $modalInstance, bootc
 	console.log('user info from registerCtrl')
 	console.log(bootcampObj);
 
-	$scope.name = bootcampObj._json.name
+	$scope.checkboxModel = {
+		value1: true
+	}
 
 	$scope.submit = function  () {
 		var newBootcamp = {
 			name: $scope.name,
+			url: $scope.url,
 			githubId: bootcampObj.id,
 			gitLink: bootcampObj.profileUrl,
 			profilePic: bootcampObj._json.avatar_url,
@@ -18,7 +21,7 @@ app.controller('bootcampModalCtrl', function($scope, $log, $modalInstance, bootc
 				city: $scope.city,
 				state: $scope.state
 			},
-			housing: $scope.housing
+			housing: $scope.checkboxModel.value1
 		}
 		
 		$modalInstance.close(newBootcamp)

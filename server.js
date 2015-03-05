@@ -13,7 +13,9 @@ var app = Express();
 
 //controllers
 var userCtrl = require('./lib/controllers/userCtrl');
-var bootcampCtrl = require('./lib/controllers/bootcampCtrl')
+var bootcampCtrl = require('./lib/controllers/bootcampCtrl');
+var projectCtrl = require('./lib/controllers/projectCtrl')
+
 
 //Mongoose
 var mongoUri = 'mongodb://localhost:27017/groupProject';
@@ -51,8 +53,9 @@ app.get('/api/user/userInfo', function (req, res) {
 })
 
 app.post('/api/user', userCtrl.updateOrCreate)
+app.post('/api/user/saveProject', projectCtrl.saveProject)
 app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
-
+app.post
 
 //Github Login
 Passport.use(new GithubStrategy({
