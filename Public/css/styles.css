@@ -135,6 +135,27 @@ body, html {
   margin: 15px;
 }
 
+/*end fixed navbar*/
 
 
+/* js/views/homeTmpl.html  */
 
+.three-div-container {
+  display: flex;
+  width: 100%;
+  padding: 100px 0 30px 90px;
+
+  background-color: orange;
+}
+
+.div-dimensions{
+  width: 30%;
+  height: 400px;
+  background-color: red;
+  border-radius: 6px;
+  margin: 5px;
+}
+
+.half-dimension {
+  height: 50%;
+}
