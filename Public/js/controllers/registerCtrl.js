@@ -27,18 +27,20 @@ app.controller('registerCtrl', function($scope, $log, $modal, registerService) {
 	} 
 
 	$scope.openBootcamp = function() {
-		// registerService.getUser().then(function (res) {
-		// 	console.log(res.data);
-		// })
 		var modalInstance = $modal.open({
 			templateUrl: 'js/modals/bootcampModalTmpl.html',
 			controller: 'bootcampModalCtrl',
 			size: 'lg',
 			resolve: {
-				userObj: function () {
-					return $scope.userObj
+				bootcampObj: function () {
+					return $scope.user;
 				}
 			}
+		})
+
+		modalInstance.result.then(function(data) {
+			console.log(data);
+			registerService.saveBootcamp(data);
 		})
 	}
 

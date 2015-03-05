@@ -12,7 +12,8 @@ var port = 8888
 var app = Express();
 
 //controllers
-var userCtrl = require('./lib/controllers/userCtrl')
+var userCtrl = require('./lib/controllers/userCtrl');
+var bootcampCtrl = require('./lib/controllers/bootcampCtrl')
 
 //Mongoose
 var mongoUri = 'mongodb://localhost:27017/groupProject';
@@ -45,14 +46,16 @@ Passport.deserializeUser(function(obj, done) {
 
 
 //endpoints
-	app.get('/api/user/userInfo', function (req, res) {
-		res.status(200).json(req.user)
-	})
+app.get('/api/user/userInfo', function (req, res) {
+	res.status(200).json(req.user)
+})
 // app.get('/api/user', userCtrl.getUser);
 // app.get('/api/users', userCtrl.getUsers);
 
 // app.get('/api/bootcamp', bootcampCtrl.getBootcamp);
 // app.get('/api/bootcamps', bootcampCtrl.getBootcamps);
+
+app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
 
 
 //Github Login
