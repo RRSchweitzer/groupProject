@@ -33,11 +33,11 @@ body, html {
   border-radius: 8px;
 }
 
-/*.github-icon {
+.github-icon {
   float: right;
   margin-right: 10px;
-  margin-top: 20px;
-}*/
+  margin-top: 80px;
+}
 
 .btn-group {
   float: right;
@@ -48,12 +48,6 @@ body, html {
 .btn-primary {
   background: #0090C5;
 }
-
-/*.logout {
-  background: red;
-  height: 100%;
-  float: right;
-}*/
 
 /*homepage -------------------------------*/
 
@@ -127,8 +121,19 @@ body, html {
   border: 1px solid black;
 }*/
 
+/*register css*/
+.register-buttons {
+  margin-top: 80px;
+}
 
-
+/*Modals*/
+.modals {
+  margin-top: 120px;
+  z-index: 10;
+}
+.modal-view {
+  margin: 15px;
+}
 
 
 
