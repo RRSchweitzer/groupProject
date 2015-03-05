@@ -21,6 +21,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, registerService) {
 		})
 
 		modalInstance.result.then(function(data) {
+			registerService.
 			console.log(data);
 		})
 	} 
