@@ -138,14 +138,12 @@ body, html {
 /*end fixed navbar*/
 
 
-/* js/views/homeTmpl.html  */
+/* 3 column div  */
 
 .three-div-container {
   display: flex;
   width: 100%;
-  padding: 100px 0 30px 90px;
-
-  background-color: orange;
+  padding: 50px 0 30px 90px;
 }
 
 .div-dimensions{
@@ -158,4 +156,38 @@ body, html {
 
 .half-dimension {
   height: 50%;
+}
+
+.center-div {
+  width: 61%;
+}
+
+.mini-div {
+  background-color: black;
+  width: 150px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.some-padding {
+  padding: 10px;
+}
+
+.button-styling {
+  border-radius: 6px;
+  height: 50px;
+}
+
+.text-div {
+  outline: solid black;
+}
+
+.mini-footer {
+  padding-left: 5px;
+  padding-top: 15px;
 }
