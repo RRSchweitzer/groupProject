@@ -15,6 +15,11 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService) {
 		})
 	} 
 
-
+	$scope.getProject = function() {
+		projectService.getProject().then(function(res) {
+			console.log(res);
+			$scope.png = res.data.img;
+		})
+	}
 
 })
