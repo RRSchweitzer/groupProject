@@ -1,5 +1,6 @@
 var app = angular.module('group');
 
+
 app.controller('registerCtrl', function($scope, $log, $modal, $location, registerService) {
 	
 		$scope.user = registerService.getUser().then(function (res) {
@@ -21,8 +22,12 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 		})
 
 		modalInstance.result.then(function(data) {
-			registerService.
-			console.log(data);
+			registerService.saveUser(data)
+			.then(function (res) {
+				$location.path('/projects')
+				return res
+		})
+			
 		})
 	} 
 

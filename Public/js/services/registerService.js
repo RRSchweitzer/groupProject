@@ -1,6 +1,6 @@
 var app = angular.module('group');
 
-app.service('registerService', function($http) {
+app.service('registerService', function($http, $location) {
 
 	this.getUser = function () {
 		return $http({
@@ -16,5 +16,13 @@ app.service('registerService', function($http) {
 			data: bootcampObj
 		})
 	}
-		
+	
+	this.saveUser = function (userObj) {
+		return $http({
+			method: 'POST',
+			url: 'api/user',
+			data: userObj
+		})
+	}	
+
 })
