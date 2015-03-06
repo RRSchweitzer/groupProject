@@ -1,0 +1,19 @@
+<form class="modal-view">
+  <div class="form-group">
+    <label for="Name">Project Name</label>
+    <input type="text" class="form-control" id="nameInput" ng-model='name' placeholder="Project Name">
+  </div>
+  <div class="form-group">
+    <label for="Name">Project Url</label>
+    <input type="text" class="form-control" id="urlInput" ng-model='url' placeholder="Url...">
+  </div>
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input type="text" class="form-control" id="descriptionInput" ng-model='description' placeholder="City">
+  </div>
+	  <div class="modal-footer">
+		    <button class="btn btn-primary" ng-click="submit()">Submit</button>
+		    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+		</div>
+	</div>
+</form>
