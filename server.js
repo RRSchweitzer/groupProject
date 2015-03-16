@@ -57,7 +57,7 @@ app.get('/api/user/userInfo', function (req, res) {
 app.post('/api/user', userCtrl.updateOrCreate)
 app.post('/api/user/saveProject', projectCtrl.saveProject)
 app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
-app.get('/api/project', projectCtrl.getProject);
+app.get('/api/project', projectCtrl.getProjects);
 
 //Github Login
 Passport.use(new GithubStrategy({
