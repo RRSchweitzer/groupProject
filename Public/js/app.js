@@ -23,6 +23,10 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap'])
 			templateUrl: "js/views/projectTmpl.html",
 			controller: "projectCtrl"
 		})
+		.when('/login', {
+			templateUrl: "js/views/loginTmpl.html",
+			controller: "loginCtrl"
+		})
 		.otherwise({
 			redirectTo: "/"
 		})

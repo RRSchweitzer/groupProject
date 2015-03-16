@@ -3,8 +3,8 @@
 body, html {
   width: 100%;
   height: 100%;
-  margin: 0px;
   background-image: url("/images/squairy_light.png"); 
+  font-family: 'Cabin';
 }
 
 .row {
@@ -48,10 +48,17 @@ body, html {
   float: right;
   margin-top: 40px;
   margin-right: 88px;
+  font-family: 'Cabin';
+}
+
+.github-icon {
+  float: right;
+  margin-top: 40px;
+  margin-right: 5px;
 }
 
 
-
+/*end fixed fixed-nav-bar*/
 
 
 /*homepage -------------------------------*/
@@ -112,8 +119,12 @@ body, html {
   transition: all 0.3s ease 0s;
 }
 
-button:hover {
+.lets-roll:hover {
   background: #286090;
+}
+
+.more-info:hover {
+  background: #C9C5C5;
 }
 
 .top-button {
@@ -163,6 +174,144 @@ button:hover {
  /* border: 1px solid black;*/
 }
 
+/* 3 column div  */
+
+.three-div-container {
+  display: flex;
+  width: 100%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+
+.div-dimensions{
+  width: 30%;
+  height: 400px;
+  background-color: white;
+  border-radius: 6px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.half-dimension {
+  height: 50%;
+  text-align: center;
+}
+
+.left-image {
+  background-image: url("/images/reddit.png");
+  background-size: contain;
+}
+
+.middle-image {
+  background-image: url("/images/padmapper.png");
+  background-size: contain;
+}
+
+.right-image {
+  background-image: url("/images/ycombinator.png");
+  background-size: contain;
+}
+
+.sample_project {
+  font-family: 'Bevan', cursive;
+}
+
+.text-desc {
+ padding: 10px;
+ font-size: 15px;
+ font-family: 'cabin';
+ }
+
+.center-div {
+  width: 61%;
+  margin-left: 20px;
+  font-size: 15px;
+  padding-bottom: 20px;
+
+}
+
+.what_is_container {
+  margin-bottom: 30px;
+}
+
+.app_desc {
+  margin-bottom: 30px;
+  padding: 0px 20px;
+}
+
+.browse-projects {
+  text-align: center;
+}
+
+.mini-div {
+  background-image: url("/images/DSC_0008-12.png");
+  background-size: contain;
+  width: 150px;
+  height: 100px;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.btn-lg {
+  color: white;
+  background-color: #337ab7; 
+  position:relative;
+  font-family: 'Cabin';
+  transition: all 0.3s ease 0s;
+
+}
+
+.continue {
+  margin-left: 280px;
+}
+
+.continue:hover {
+  background: #286090;
+
+}
+
+.go:hover {
+  background: #286090;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.what-is {
+  text-align: center;
+}
+
+/*.some-padding {
+  padding: 10px;
+}*/
+
+/*.button-styling {
+  border-radius: 6px;
+  height: 50px;
+}*/
+
+.text-div {
+  outline: solid black;
+}
+
+.mini-footer {
+  padding-left: 5px;
+  padding-top: 15px;
+}
+
+/*end--homepage -------------------------------*/
+
+/*login view ---------------------------------------- */
+
+
+
+
+
+
+/*end login view -----------------------------------------*/
+
 /*register css*/
 .register-buttons {
   margin-top: 80px;
@@ -177,60 +326,23 @@ button:hover {
   margin: 15px;
 }
 
-/*end fixed navbar*/
 
 
-/* 3 column div  */
 
-.three-div-container {
-  display: flex;
-  width: 100%;
-  padding: 100px 0 30px 90px;
 
-  /*background-color: orange;*/
 
-.div-dimensions{
-  width: 30%;
-  height: 400px;
-  background-color: red;
-  border-radius: 6px;
-  margin: 5px;
-}
 
-.half-dimension {
-  height: 50%;
-}
 
-.center-div {
-  width: 61%;
-}
 
-.mini-div {
-  background-color: black;
-  width: 150px;
-  height: 100px;
-  margin: 5px;
-  border-radius: 6px;
-}
 
-.flex-container {
-  display: flex;
-}
 
-.some-padding {
-  padding: 10px;
-}
 
-.button-styling {
-  border-radius: 6px;
-  height: 50px;
-}
 
-.text-div {
-  outline: solid black;
-}
 
-.mini-footer {
-  padding-left: 5px;
-  padding-top: 15px;
-}
+
+
+
+
+
+
+
