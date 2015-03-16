@@ -11,14 +11,15 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService) {
 		})
 
 		modalInstance.result.then(function(projectObj) {
-			projectService.saveProject(projectObj)
+			projectService.saveProject(projectObj).then(function(res) {
+				$scope.getProjects();
+			})
 			})
 		}
 	
 
 	$scope.getProjects = function() {
 		projectService.getProjects().then(function(res) {
-			console.log(res.data);
 			$scope.projects = res.data;
 		})
 	}

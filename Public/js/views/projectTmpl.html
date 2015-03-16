@@ -3,5 +3,13 @@
 </div>
 
 
+<div>
+	<img class="project-images" ng-repeat="img in projects" ng-src="data:image/png;base64,{{img.img}}" spinkit-image-preloader='rotating-plane-spinner'>
+	<button ng-click='removeProject()' type='button', class='btn btn-default btn-sm' >
+		<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+	</button>
+</div>
 
-<img class="project-images" ng-repeat="img in projects" src="data:image/png;base64,{{img.img}}">
+<!-- <img width='800' height='600' alt='Your description' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' />
+
+<img style='width:800px; height:800px' alt='Your escription' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' /> -->
