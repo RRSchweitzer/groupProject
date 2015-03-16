@@ -10,7 +10,7 @@ app.service('projectService', function($http) {
 		})
 	}
 
-	this.getProject = function () {
+	this.getProjects = function () {
 		return $http({
 			method: 'GET',
 			url: 'api/project'

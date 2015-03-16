@@ -39,11 +39,11 @@ body, html {
   font-size: 15px;
 }
 
-/*.github-icon {
+.github-icon {
   float: right;
   margin-right: 10px;
-  margin-top: 80px;
-}*/
+  margin-top: 120px;
+}
 .btn-group {
   float: right;
   margin-top: 40px;
@@ -233,3 +233,13 @@ button:hover {
   padding-left: 5px;
   padding-top: 15px;
 }
+
+/*Project View*/
+.project-images{
+  height: 300px;
+  width: 300px;
+  margin: 10px;
+}
+
+
+

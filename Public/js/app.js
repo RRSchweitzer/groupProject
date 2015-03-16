@@ -1,5 +1,5 @@
 
-var app = angular.module('group', ['ngRoute','ui.bootstrap'])
+var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit'])
 
 	app.config(function($routeProvider) {
 		$routeProvider
