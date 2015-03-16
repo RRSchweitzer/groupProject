@@ -52,10 +52,12 @@ app.get('/api/user/userInfo', function (req, res) {
 	res.status(200).json(req.user)
 })
 
+
+
 app.post('/api/user', userCtrl.updateOrCreate)
 app.post('/api/user/saveProject', projectCtrl.saveProject)
 app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
-app.post
+app.get('/api/project', projectCtrl.getProjects);
 
 //Github Login
 Passport.use(new GithubStrategy({
