@@ -1,13 +1,14 @@
 <div class="register-buttons">
 	<button ng-click='openProject()' class='btn btn-danger'>Share Project</button>
 </div>
+<div class='loading-overlay' ng-show='showSpinner'>
+	<cube-grid-spinner></cube-grid-spinner>
+</div>
 
-
-<div>
-	<img class="project-images" ng-repeat="img in projects" ng-src="data:image/png;base64,{{img.img}}" spinkit-image-preloader='rotating-plane-spinner'>
-	<button ng-click='removeProject()' type='button', class='btn btn-default btn-sm' >
-		<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
-	</button>
+<div class='main-container'>
+	<div class='project-container' ng-repeat="img in projects">
+		<img class="project-images"  ng-src="data:image/png;base64,{{img.img}}" >
+	</div>
 </div>
 
 <!-- <img width='800' height='600' alt='Your description' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' />

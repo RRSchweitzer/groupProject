@@ -2,6 +2,8 @@ var app = angular.module('group');
 
 app.controller('projectCtrl', function ($scope, $modal, $log, projectService) {
 	
+	$scope.showSpinner = false;
+
 	$scope.openProject = function() {
 		var modalInstance = $modal.open({
 			templateUrl: 'js/modals/projectModalTmpl.html',
@@ -11,7 +13,9 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService) {
 		})
 
 		modalInstance.result.then(function(projectObj) {
+			$scope.showSpinner = true;
 			projectService.saveProject(projectObj).then(function(res) {
+				$scope.showSpinner = false;
 				$scope.getProjects();
 			})
 			})
