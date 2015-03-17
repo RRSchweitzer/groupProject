@@ -333,28 +333,35 @@ body, html {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 /*Project View*/
+.main-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.loading-overlay {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.project-container {
+  padding: 5px 5px;
+}
+
 .project-images{
   height: 300px;
   width: 300px;
   margin: 10px;
 }
 
->>>>>>> upstream/master
 
 
