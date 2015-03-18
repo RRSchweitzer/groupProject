@@ -12,16 +12,16 @@ app.controller('bootcampModalCtrl', function($scope, $log, $modalInstance, bootc
 	$scope.submit = function  () {
 		var newBootcamp = {
 			name: $scope.name,
+			githubId: bootcampObj.githubId,
+			gitLink: bootcampObj.gitLink,
+			profilePic: bootcampObj.profilePic,
 			url: $scope.url,
-			githubId: bootcampObj.id,
-			gitLink: bootcampObj.profileUrl,
-			profilePic: bootcampObj._json.avatar_url,
-			accountType: bootcampObj._json.type,
 			location: {
 				city: $scope.city,
 				state: $scope.state
 			},
-			housing: $scope.checkboxModel.value1
+			housing: $scope.checkboxModel.value1,
+			registered: true
 		}
 		
 		$modalInstance.close(newBootcamp)
