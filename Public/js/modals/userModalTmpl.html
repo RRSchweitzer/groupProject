@@ -1,11 +1,16 @@
 <form class="modal-view">
   <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" ng-model='name' placeholder="Name">
+  </div>
+  <div class="form-group">
     <label for="exampleInputEmail1">Bio</label>
     <input type="text" class="form-control" id="exampleInputEmail1" ng-model='bio' placeholder="Bio">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Bootcamp</label>
-    <input ng-model='bootcamp' type="text" class="form-control" id="exampleInputPassword1" placeholder="Bootcamp attended">
+    <select class="form-control" ng-model="bootcamp" ng-options="opt as opt.name for opt in bootcamps">
+    </select>
   </div>
   <div class="form-group">
     <label for="skills">Skills</label>
