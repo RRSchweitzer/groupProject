@@ -1,3 +1,4 @@
+
 <div id="header-wrapper" ng-controller="homeCtrl">
 				<header id="header" class="container">
 				
@@ -36,3 +37,11 @@
 					
 				</header>
 			</div>
+
+<div ng-repeat = 'img in projects'>
+	<img class="project-images" src="data:image/png;base64,{{img.img}}">
+	<button ng-click='removeProject(img._id)' type='button', class='btn btn-default btn-sm' >
+		<span class='glyphicon glyphicon-remove' aria-hidden='true'></span>
+	</button>
+</div>
+

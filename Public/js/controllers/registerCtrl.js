@@ -2,9 +2,13 @@ var app = angular.module('group');
 
 
 app.controller('registerCtrl', function($scope, $log, $modal, $location, registerService) {
-	
+		$scope.bootcamps = registerService.getBootcamps()
+			.then(function(res) {
+				console.log("this is res.data")
+				console.log(res.data)
+				return res.data
+			})
 		$scope.user = registerService.getUser().then(function (res) {
-			console.log(res);
 			return res.data;
 		})
 
@@ -17,6 +21,9 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 			resolve: {
 				userObj: function () {
 					return $scope.user;
+				},
+				bootcampsObj: function () {
+					return $scope.bootcamps
 				}
 			}
 		})
@@ -46,7 +53,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 		modalInstance.result.then(function(newBootcamp) {
 			console.log(newBootcamp);
 			registerService.saveBootcamp(newBootcamp).then(function(result) {
-				$location.path('/projects')
+				$location.path('/bootcamp/dashboard')
 			});
 		})
 	}

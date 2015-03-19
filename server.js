@@ -14,7 +14,11 @@ var app = Express();
 //controllers
 var userCtrl = require('./lib/controllers/userCtrl');
 var bootcampCtrl = require('./lib/controllers/bootcampCtrl');
-var projectCtrl = require('./lib/controllers/projectCtrl')
+var projectCtrl = require('./lib/controllers/projectCtrl');
+var registerCtrl = require('./lib/controllers/registerCtrl');
+
+//models
+var User = require('./lib/models/user')
 
 
 //Mongoose
@@ -52,12 +56,17 @@ app.get('/api/user/userInfo', function (req, res) {
 	res.status(200).json(req.user)
 })
 
-
-
-app.post('/api/user', userCtrl.updateOrCreate)
+app.post('/api/user', registerCtrl.updateOrCreate)
 app.post('/api/user/saveProject', projectCtrl.saveProject)
 app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
 app.get('/api/project', projectCtrl.getProjects);
+app.get('/api/user/projects', userCtrl.getProjects);
+app.delete('/api/user/projects/:imgId', userCtrl.removeProject);
+app.get('/api/getBootcamps', bootcampCtrl.getBootcamps);
+app.get('/api/bootcampUsers', bootcampCtrl.getUsers);
+
+
+
 
 //Github Login
 Passport.use(new GithubStrategy({
@@ -66,7 +75,12 @@ Passport.use(new GithubStrategy({
 	callbackURL: 'http://localhost:8888/auth/github/callback'
 }, 
 function (token, refreshToken, profile, done) {
-	return done(null, profile);
+	userCtrl.updateOrCreate(profile)
+		.then(function(user) {
+			done(null, user);
+		}, function(err) {
+			done(err, profile);
+		})
 }
 ));
 
@@ -79,7 +93,15 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
 	Passport.authenticate('github',{ failureRedirect: '/#/login'}),
 	function(req, res) {
-		res.redirect('/#/register');
+		User.findOne({githubId: req.user.id}, function(err, user) {
+			if(req.user.registered === false) {
+				res.redirect('/#/register');
+			} else if(req.user.registered === true) {
+				res.redirect('/#/projects');
+			} else if(err) {
+				console.log(err);
+			}
+		})
 	});
 
 var requireAuth = function (req, res, next) {

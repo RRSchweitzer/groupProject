@@ -1,9 +1,11 @@
 var app = angular.module('group');
 
-app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj) {
+app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj, bootcampsObj) {
 
-	console.log('user info from registerCtrl')
-	console.log(userObj);
+	console.log('bootcamp info from registerCtrl')
+	console.log(bootcampsObj)
+
+	$scope.bootcamps = bootcampsObj
 	
 	$scope.experience = {
 		level:'Never Coded'
@@ -12,13 +14,11 @@ app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj) 
 	$scope.submit = function  () {
 		var newUser = {
 			name: $scope.name,
-			githubId: userObj.id,
-			gitLink: userObj.profileUrl,
-			profilePic: userObj._json.avatar_url,
-			accountType: userObj._json.type,
 			bio: $scope.bio,
 			bootcamp: $scope.bootcamp,
-			experience: $scope.experience
+			skills: $scope.skills,
+			experience: $scope.experience,
+			gradYear: $scope.gradYear
 		}
 		
 		$modalInstance.close(newUser)

@@ -23,6 +23,13 @@ app.service('registerService', function($http, $location) {
 			url: 'api/user',
 			data: userObj
 		})
+	}
+
+	this.getBootcamps = function () {
+		return $http({
+			method: 'GET',
+			url: 'api/getBootcamps'
+		})
 	}	
 
 })
