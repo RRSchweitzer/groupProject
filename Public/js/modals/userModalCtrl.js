@@ -1,6 +1,6 @@
 var app = angular.module('group');
 
-app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj) {
+app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj, bootcampsObj) {
 
 	console.log('user info from registerCtrl')
 	console.log(userObj);
@@ -14,7 +14,8 @@ app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj) 
 			bio: $scope.bio,
 			bootcamp: $scope.bootcamp,
 			experience: $scope.experience,
-			skills: $scope.skills
+			skills: $scope.skills,
+			gradYear: $scope.gradYear
 		}
 		
 		$modalInstance.close(newUser)

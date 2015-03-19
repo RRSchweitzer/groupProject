@@ -2,7 +2,9 @@ var app = angular.module('group');
 
 
 app.controller('registerCtrl', function($scope, $log, $modal, $location, registerService) {
-	
+	 	// $scope.bootcamps = registerService.getBootcamps().then(function(res) {
+	 	// 	return res.data
+	 	// })
 		$scope.user = registerService.getUser().then(function (res) {
 			return res.data;
 		})
@@ -16,6 +18,9 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 			resolve: {
 				userObj: function () {
 					return $scope.user;
+				},
+				bootcampsObj: function () {
+					return $scope.bootcamps;
 				}
 			}
 		})
@@ -24,7 +29,6 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 			registerService.saveUser(data)
 			.then(function (res) {
 				$location.path('/projects')
-				return res
 		})
 			
 		})
