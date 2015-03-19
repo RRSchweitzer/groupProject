@@ -2,6 +2,7 @@ var app = angular.module('group');
 
 
 app.controller('registerCtrl', function($scope, $log, $modal, $location, registerService) {
+
 		$scope.bootcamps = registerService.getBootcamps()
 			.then(function(res) {
 				console.log("this is res.data")
@@ -31,7 +32,6 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 			registerService.saveUser(data)
 			.then(function (res) {
 				$location.path('/projects')
-				return res
 		})
 		})
 	} 

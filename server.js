@@ -18,7 +18,8 @@ var projectCtrl = require('./lib/controllers/projectCtrl');
 var registerCtrl = require('./lib/controllers/registerCtrl');
 
 //models
-var User = require('./lib/models/user')
+var User = require('./lib/models/user');
+var Bootcamp = require('./lib/models/bootcamp');
 
 
 //Mongoose
@@ -93,13 +94,27 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
 	Passport.authenticate('github',{ failureRedirect: '/#/login'}),
 	function(req, res) {
-		User.findOne({githubId: req.user.id}, function(err, user) {
-			if(req.user.registered === false) {
-				res.redirect('/#/register');
-			} else if(req.user.registered === true) {
-				res.redirect('/#/projects');
-			} else if(err) {
-				console.log(err);
+
+		Bootcamp.findOne({'githubId': req.user.githubId}, function(err, bootcamp) {
+			if(!bootcamp) {
+				User.findOne({'githubId': req.user.githubId}, function(err, user) {
+					if(user.registered === false) {
+						res.redirect('/#/register');
+					} else if (user.registered === true) {
+						res.redirect('/#/projects')
+					} else if (err) {
+						console.log(err)
+					}
+				})
+			} else {
+				Bootcamp.findOne({'githubId': req.user.githubId}, function(err, user){
+				if(bootcamp.registered === false) {
+					res.redirect('/#/register');
+				} else if (bootcamp.registered === true) {
+					res. redirect('/#/bootcamp/dashboard');
+				}
+					
+				})
 			}
 		})
 	});

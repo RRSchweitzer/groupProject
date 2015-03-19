@@ -18,6 +18,7 @@ app.controller('userModalCtrl', function($scope, $log, $modalInstance, userObj, 
 			bootcamp: $scope.bootcamp,
 			skills: $scope.skills,
 			experience: $scope.experience,
+			skills: $scope.skills,
 			gradYear: $scope.gradYear
 		}
 		
