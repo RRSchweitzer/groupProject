@@ -62,7 +62,8 @@ app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
 app.get('/api/project', projectCtrl.getProjects);
 app.get('/api/user/projects', userCtrl.getProjects);
 app.delete('/api/user/projects/:imgId', userCtrl.removeProject);
-app.get('api/bootcampUsers', userCtrl.getUnverifiedUsers);
+app.get('/api/getBootcamps', bootcampCtrl.getBootcamps);
+app.get('/api/bootcampUsers', bootcampCtrl.getUsers);
 
 
 
@@ -92,11 +93,13 @@ app.get('/auth/github',
 app.get('/auth/github/callback',
 	Passport.authenticate('github',{ failureRedirect: '/#/login'}),
 	function(req, res) {
-		User.findOne({_id: req.user._id}, function(err, user) {
-			if(err) {
-				res.redirect('/#/register')
-			} else {
-				res.redirect('/#/projects')
+		User.findOne({githubId: req.user.id}, function(err, user) {
+			if(req.user.registered === false) {
+				res.redirect('/#/register');
+			} else if(req.user.registered === true) {
+				res.redirect('/#/projects');
+			} else if(err) {
+				console.log(err);
 			}
 		})
 	});

@@ -1,15 +1,15 @@
 app = angular.module('group');
 
-app.controller('bootcampCtrl', function($scope) {
+app.controller('bootcampCtrl', function($scope, bootcampService) {
 	$scope.list1 = {title: 'User Name'};
   $scope.list2 = {};
 
-  $scope.getUnverifiedUsers = function() {
-		bootcampService.getUnverifiedUsers()
+  $scope.getUsers = function() {
+		bootcampService.getUsers()
 		.then(function(res) {
-			$scope.unverifiedUsers = res.data;
+			console.log(res)
+			$scope.Users = res.data;
 		})
 	}
-	$scope.getProjects();
-
+	$scope.getUsers();
 })

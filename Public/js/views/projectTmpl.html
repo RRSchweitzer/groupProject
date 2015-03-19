@@ -1,16 +1,28 @@
-<div class="register-buttons">
-	<button ng-click='openProject()' class='btn btn-danger'>Share Project</button>
-</div>
 <div class='loading-overlay' ng-show='showSpinner'>
 	<cube-grid-spinner></cube-grid-spinner>
 </div>
 
+<div class="register-buttons">
+	<button ng-click='openProject()' class='btn btn-danger btn-lg btn-block'>Share Project</button>
+</div>
 <div class='main-container'>
-	<div class='project-container' ng-repeat="img in projects">
-		<img class="project-images"  ng-src="data:image/png;base64,{{img.img}}" >
+	<div class='project-container' ng-repeat="project in projects">
+		<ul class="grid cs-style-1">
+			<li>
+				<figure>
+					<img class="project-img" ng-src="data:image/png;base64,{{project.img}}" alt="img01">
+					<figcaption>
+						<h3>{{project._id}}</h3>
+						<span>Jacob Cummings</span>
+						<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+					</figcaption>
+				</figure>
+			</li>
+		</ul>
 	</div>
 </div>
 
 <!-- <img width='800' height='600' alt='Your description' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' />
 
 <img style='width:800px; height:800px' alt='Your escription' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' /> -->
+
