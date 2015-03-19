@@ -23,18 +23,16 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 					return $scope.user;
 				},
 				bootcampsObj: function () {
-					return $scope.bootcamps
+					return $scope.bootcamps;
 				}
 			}
 		})
-
 		modalInstance.result.then(function(data) {
 			registerService.saveUser(data)
 			.then(function (res) {
 				$location.path('/projects')
 				return res
 		})
-			
 		})
 	} 
 
