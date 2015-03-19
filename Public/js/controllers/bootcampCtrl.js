@@ -8,7 +8,7 @@ app.controller('bootcampCtrl', function($scope, bootcampService) {
 		bootcampService.getUsers()
 		.then(function(res) {
 			console.log(res)
-			$scope.Users = res.data;
+			$scope.users = res.data;
 		})
 	}
 	$scope.getUsers();
