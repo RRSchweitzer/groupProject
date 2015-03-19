@@ -2,18 +2,14 @@ var app = angular.module('group');
 
 
 app.controller('registerCtrl', function($scope, $log, $modal, $location, registerService) {
-<<<<<<< HEAD
-	 	// $scope.bootcamps = registerService.getBootcamps().then(function(res) {
-	 	// 	return res.data
-	 	// })
-=======
+
 		$scope.bootcamps = registerService.getBootcamps()
 			.then(function(res) {
 				console.log("this is res.data")
 				console.log(res.data)
 				return res.data
 			})
->>>>>>> upstream/master
+
 		$scope.user = registerService.getUser().then(function (res) {
 			return res.data;
 		})
@@ -29,11 +25,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 					return $scope.user;
 				},
 				bootcampsObj: function () {
-<<<<<<< HEAD
 					return $scope.bootcamps;
-=======
-					return $scope.bootcamps
->>>>>>> upstream/master
 				}
 			}
 		})
