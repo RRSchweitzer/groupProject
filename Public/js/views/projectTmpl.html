@@ -1,16 +1,70 @@
-<div class="register-buttons">
-	<button ng-click='openProject()' class='btn btn-danger'>Share Project</button>
-</div>
+
+<div id="header-wrapper" ng-controller="homeCtrl">
+				<header id="header" class="container">
+				
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="#/">App Name</a></h1>
+						</div>
+					
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<!-- <li class="current"><a href="index.html">Welcome</a></li>
+								<li>
+									<a href="">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li>
+											<a href="">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li> -->
+								<li><a href="#/">Home</a></li>
+								<li><a href="right-sidebar.html">Dashboard</a></li>
+								<li><a href="no-sidebar.html">Sign in with Github</a></li>
+								<li><a href="left-sidebar.html"></a></li>
+							</ul>
+						</nav>
+					
+				</header>
+			</div>
+
+
 <div class='loading-overlay' ng-show='showSpinner'>
 	<cube-grid-spinner></cube-grid-spinner>
 </div>
 
+
+<div class="register-buttons">
+	<button ng-click='openProject()' class='btn btn-danger btn-lg btn-block'>Share Project</button>
+</div>
 <div class='main-container'>
-	<div class='project-container' ng-repeat="img in projects">
-		<img class="project-images"  ng-src="data:image/png;base64,{{img.img}}" >
+	<div class='project-container' ng-repeat="project in projects">
+		<ul class="grid cs-style-1">
+			<li>
+				<figure>
+					<img class="project-img" ng-src="data:image/png;base64,{{project.img}}" alt="img01">
+					<figcaption>
+						<h3>{{project._id}}</h3>
+						<span>Jacob Cummings</span>
+						<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+					</figcaption>
+				</figure>
+			</li>
+		</ul>
 	</div>
 </div>
 
 <!-- <img width='800' height='600' alt='Your description' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' />
 
 <img style='width:800px; height:800px' alt='Your escription' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' /> -->
+
