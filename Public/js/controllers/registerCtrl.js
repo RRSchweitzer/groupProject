@@ -19,7 +19,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 			templateUrl: 'js/modals/userModalTmpl.html',
 			controller: 'userModalCtrl',
 			windowClass: 'modals',
-			size: 'lg',
+			size: 'md',
 			resolve: {
 				userObj: function () {
 					return $scope.user;
@@ -41,7 +41,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 		var modalInstance = $modal.open({
 			templateUrl: 'js/modals/bootcampModalTmpl.html',
 			controller: 'bootcampModalCtrl',
-			size: 'lg',
+			size: 'md',
 			resolve: {
 				bootcampObj: function () {
 					return $scope.user;
