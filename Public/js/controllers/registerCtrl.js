@@ -9,6 +9,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 				console.log(res.data)
 				return res.data
 			})
+
 		$scope.user = registerService.getUser().then(function (res) {
 			return res.data;
 		})

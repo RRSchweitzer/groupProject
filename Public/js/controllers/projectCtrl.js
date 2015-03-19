@@ -28,6 +28,7 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService, re
 
 	$scope.getProjects = function() {
 		projectService.getProjects().then(function(res) {
+			console.log(res.data);
 			$scope.projects = res.data;
 			console.log(res.data)
 		})
