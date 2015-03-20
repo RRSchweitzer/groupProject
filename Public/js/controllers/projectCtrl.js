@@ -13,12 +13,7 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService, re
 			templateUrl: 'js/modals/projectModalTmpl.html',
 			controller: 'projectModalCtrl',
 			windowClass: 'modals',
-			size: 'lg',
-			resolve: {
-				userObj: function () {
-					return $scope.user;
-				}
-			}
+			size: 'lg'
 		})
 
 		modalInstance.result.then(function(projectObj) {
@@ -35,6 +30,7 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService, re
 		projectService.getProjects().then(function(res) {
 			console.log(res.data);
 			$scope.projects = res.data;
+			console.log(res.data)
 		})
 	}
 	$scope.getProjects();

@@ -169,7 +169,7 @@
 			{
 				display: block;
 				font-weight: 800;
-				margin: 0 0 1em 0;
+				margin: 0 0 0em 0;
 				font-size: 0.8em;
 				color: #444;
 			}
@@ -668,3 +668,18 @@
 		{
 			color: inherit;
 		}
+	/*Modals*/
+.modal-content{
+  margin-top: 10px;
+  margin-bottom: -15px;
+  z-index: 10;
+}
+.model-footer{
+	padding: 0px;
+}
+.modal-view {
+  margin: 15px;
+}
+
+
+

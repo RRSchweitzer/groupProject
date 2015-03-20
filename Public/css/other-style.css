@@ -13,10 +13,9 @@
 
 .register-buttons {
 /*  border: 1px solid black;*/
-  padding-top: 30px;
   text-align: center;
   font-size: 40px;
-}
+  }
 
 .register {
   height: 200px;
@@ -76,6 +75,20 @@
   height: 300px;
   width: 300px;
   margin: 10px;
+}
+.unverified-users {
+  width: 300px;
+  height: 600px;
+  margin: 10px 0px 10px 0px;
+  flex-grow: 1;
+  border: 1px solid black;
+  background-color: white;
+  float: left;
+}
+.verification-fun {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
 }
 
 /*toggle button bootcamp dashboard*/
@@ -148,5 +161,4 @@ body {
 .four .button-active .button-out {  }
 .four .button-active .button-in {  }
 .four .button-active .button-bg { background-color:#22bb22; }
-
-
+}
