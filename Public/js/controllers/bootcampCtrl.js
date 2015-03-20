@@ -1,15 +1,25 @@
-app = angular.module('group');
+var app = angular.module('group');
 
-app.controller('bootcampCtrl', function($scope, bootcampService) {
-	$scope.list1 = {title: 'User Name'};
-  $scope.list2 = {};
+app.controller('bootcampCtrl',function($scope, bootcampService, getUsers) {
+	$scope.unverified = getUsers[0];
+  	$scope.verified = getUsers[1];
 
-  $scope.getUsers = function() {
-		bootcampService.getUsers()
-		.then(function(res) {
-			console.log(res)
-			$scope.users = res.data;
-		})
+	$scope.unverifiedActive = false;
+	$scope.verifiedActive = true;
+
+	$scope.toggleUnverified = function(student) {
+		$scope.unverifiedActive = !$scope.unverifiedActive
+		$scope.unverified.splice($scope.unverified.indexOf(student), 1);
+		$scope.verified.push(student);
+		console.log($scope.verified);
+		
 	}
-	$scope.getUsers();
+
+	$scope.toggleVerified = function(student) {
+		$scope.verifiedActive = !$scope.verifiedActive;
+		$scope.verified.splice($scope.verified.indexOf(student), 1);
+		$scope.unverified.push(student);
+		console.log($scope.unverified);
+	}
+
 })

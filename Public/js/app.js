@@ -17,7 +17,12 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 		})
 		.when('/bootcamp/dashboard', {
 			templateUrl: 'js/views/bootcampTmpl.html',
-			controller: 'bootcampCtrl'
+			controller: 'bootcampCtrl',
+			resolve: {
+				getUsers: function(bootcampService) {
+					return bootcampService.getUsers()
+				}
+			}
 		})
 		.when('/projects', {
 			templateUrl: "js/views/projectTmpl.html",
