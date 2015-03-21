@@ -22,4 +22,20 @@ app.service('bootcampService', function($http, $q) {
 		})
 	return dfd.promise
 	}
+
+	this.verifyStudent = function(student) {
+		return $http({
+				method: 'POST',
+				url: 'api/bootcamp/verify/student',
+				data: student
+		})
+	}
+
+	this.unverifyStudent = function(student) {
+		return $http({
+				method: 'POST',
+				url: 'api/bootcamp/unverify/student',
+				data: student
+		})
+	}
 });
