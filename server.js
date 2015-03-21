@@ -59,12 +59,14 @@ app.get('/api/user/userInfo', function (req, res) {
 
 app.post('/api/user', registerCtrl.updateOrCreate)
 app.post('/api/user/saveProject', projectCtrl.saveProject)
-app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
 app.get('/api/project', projectCtrl.getProjects);
 app.get('/api/user/projects', userCtrl.getProjects);
 app.delete('/api/user/projects/:imgId', userCtrl.removeProject);
 app.get('/api/getBootcamps', bootcampCtrl.getBootcamps);
 app.get('/api/bootcampUsers', bootcampCtrl.getUsers);
+app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
+app.post('/api/bootcamp/verify/student', bootcampCtrl.verifyStudent);
+app.post('/api/bootcamp/unverify/student', bootcampCtrl.unverifyStudent);
 
 
 
