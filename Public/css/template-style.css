@@ -124,7 +124,7 @@
 		section,
 		article
 		{
-			margin-bottom: 5em;
+			margin-bottom: 2em;
 		}
 		
 			section > :last-child,
@@ -303,6 +303,7 @@
 				display: block;
 				width: 100%;
 				border-radius: 8px;
+				border: 1px solid hsl(0,0%,52%);
 			}
 
 			.image.fit
@@ -680,6 +681,8 @@
 .modal-view {
   margin: 15px;
 }
-
+.main-container {
+	margin: 0px 14em 0px 14em 
+}
 
 

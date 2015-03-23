@@ -7,10 +7,11 @@
 }
 
 .grid li {
-	display: inline-block;
-	width: 440px;
+	display: flex;
+	
+	width: 375px;
 	margin: 0;
-	padding: 20px;
+	padding: 5px;
 	text-align: left;
 	position: relative;
 }

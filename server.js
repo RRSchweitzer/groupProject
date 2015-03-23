@@ -59,6 +59,8 @@ app.get('/api/user/userInfo', function (req, res) {
 
 app.post('/api/user', registerCtrl.updateOrCreate)
 app.post('/api/user/saveProject', projectCtrl.saveProject)
+app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
+app.get('/api/randomProjects', projectCtrl.getRandomProjects)
 
 app.get('/api/project', projectCtrl.getProjects);
 app.get('/api/user/projects', userCtrl.getProjects);
@@ -71,8 +73,10 @@ app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
 app.post('/api/bootcamp/verify/student', bootcampCtrl.verifyStudent);
 app.post('/api/bootcamp/unverify/student', bootcampCtrl.unverifyStudent);
 
-
-
+app.get('/api/user/logout', function(req, res){
+	  req.logout();
+	  res.redirect('/');
+	})
 
 //Github Login
 Passport.use(new GithubStrategy({

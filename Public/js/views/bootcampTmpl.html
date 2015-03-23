@@ -1,30 +1,23 @@
 
-<div id="header-wrapper" ng-controller="homeCtrl">
-<header id="header" class="container">
-				
-					<!-- Logo -->
-		<div id="logo">
-			<h1><a href="#/">App Name</a></h1>
-		</div>
-	
-	<!-- Nav -->
-	<nav id="nav">
-		<ul>
-			<li><a href="#/">Home</a></li>
-			<li><a href="right-sidebar.html">Dashboard</a></li>
-			<li><a href="/auth/github">Sign in with Github</a></li>
-		</ul>
-	</nav>
-	
-</header>
+<div id="header-wrapper">
+	<header id="header" class="container">
+		<!-- Logo -->
+			<div id="logo">
+				<h1><a href="#/">ngShowCase()</a></h1>
+			</div>	
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#/projects">Projects</a></li>
+				<li><a ng-click="logout()">Logout</a></li>
+			</ul>
+		</nav>	
+	</header>
 </div>
-</br>
-</br>
-</br>
-</br>
-</br>
+
 
 <div clas='user' ng-repeat='student in unverified track by $index'>
+
 	<div class='student'>{{student.name}}
 	<img height='75px' width='75px' ng-src='{{student.profilePic}}'>
 	</div>
@@ -38,6 +31,7 @@
 	  </div>
 	</div>
 </div>
+
 
 <div clas='user' ng-repeat='student in verified'>
 	<div class='student'>{{student.name}}
@@ -53,10 +47,4 @@
 	  </div>
 	</div>
 </div>
-
-
-
-<!-- <div class="thumbnail" data-drop="true" data-jqyoui-options ng-model="list2" jqyoui-droppable style='height:50px;' jqoui-draggable='{animate:true'>
-  <div class="btn btn-success" data-drag="false" data-jqyoui-options ng-model="list2" jqyoui-draggable ng-hide="!list2.title">{{user.name}}</div>
-</div> -->
 

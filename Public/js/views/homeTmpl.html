@@ -1,5 +1,5 @@
 <!-- header --> 
-	<div id="header-wrapper" ng-controller="homeCtrl">
+	<div id="header-wrapper">
 				<header id="header" class="container">
 				
 					<!-- Logo -->
@@ -10,12 +10,10 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="#/">Home</a></li>
 								<li><a href="#/projects">Projects</a></li>
 								<li><a href="/auth/github">Sign in with Github</a></li>
 							</ul>
 						</nav>
-					
 				</header>
 			</div>
 		
@@ -44,8 +42,8 @@
 						<div class="4u">
 						
 							<!-- Box -->
-								<section class="box feature">
-									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<section class="box feature last">
+									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
 									<div class="inner">
 										<header>
 											<h2>Random Project</h2>
@@ -60,7 +58,7 @@
 						
 							<!-- Box -->
 								<section class="box feature">
-									<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
 									<div class="inner">
 										<header>
 											<h2>Random Project</h2>
@@ -73,12 +71,11 @@
 						</div>
 						<div class="4u">
 						
-							<!-- Box -->
 								<section class="box feature last">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
 									<div class="inner">
 										<header>
-											<h2>Random Project</h2>
+											<h2>{{randomProjects[2].user.name}}</h2>
 											<p>Here's another intriguing subtitle</p>
 										</header>
 										<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
@@ -102,15 +99,24 @@
 										<h3>Browse Projects</h3>
 										<div class="grid">
 											<div class="row no-collapse 50%">
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
+												<div class="6u">
+													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
+												</div>
+												<div class="6u">
+													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
 											</div>
 											<div class="row no-collapse 50%">
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
+												<div class="6u">
+													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
+												</div>
+												<div class="6u">
+													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[3].img}}" alt="" /></a>
+												</div>
 											</div>
 										</div>
-										<a href="#" class="button icon fa-file-text-o">More</a>
+										</div>
+										</section>
+										<a href="#/projects" class="button icon fa-file-text-o">More</a>
 									</section>
 								</div>
 						
@@ -123,7 +129,7 @@
 										<h2>So what's this all about?</h2>
 										<p>This is <strong>RYAN SCHWEITZER</strong> Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
 										<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
-										<a href="#" class="button icon fa-arrow-circle-right">Continue Reading</a>
+										<!-- <a href="#" class="button icon fa-arrow-circle-right">Continue Reading</a> -->
 									</section>
 								</div>
 

@@ -51,7 +51,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
 
 }
 
@@ -67,9 +67,9 @@
   bottom: 0;
   right: 0;
 }
-.project-container {
+/*.project-container {
   padding: 5px 5px;
-}
+}*/
 
 .project-images{
   height: 300px;
