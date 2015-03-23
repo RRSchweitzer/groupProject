@@ -5,7 +5,10 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 		$routeProvider
 		.when('/', {
 			templateUrl: "js/views/homeTmpl.html",
-			controller:  "homeCtrl"
+			controller:  "homeCtrl",
+			// resolve: {
+			// 	getRandomProjects
+			// }
 		})
 		.when('/register', {
 			templateUrl: 'js/views/registerTmpl.html',

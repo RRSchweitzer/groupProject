@@ -124,7 +124,7 @@
 		section,
 		article
 		{
-			margin-bottom: 5em;
+			margin-bottom: 2em;
 		}
 		
 			section > :last-child,
@@ -680,6 +680,8 @@
 .modal-view {
   margin: 15px;
 }
-
+.main-container {
+	margin: 0px 14em 0px 14em 
+}
 
 

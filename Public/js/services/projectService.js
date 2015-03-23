@@ -16,4 +16,11 @@ app.service('projectService', function($http) {
 			url: 'api/project'
 		})
 	}
+
+	this.getRandomProjects = function () {
+		return $http({
+			method: 'GET',
+			url: 'api/randomProjects'
+		})
+	}
 });
