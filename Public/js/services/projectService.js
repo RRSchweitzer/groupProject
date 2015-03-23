@@ -14,7 +14,7 @@ app.service('projectService', function($http, $q) {
 		var dfd = $q.defer();
 		$http({
 			method: 'GET',
-			url: 'api/project'
+			url: 'api/projects'
 		}).then(function(res) {
 			return dfd.resolve(res.data)
 		})
