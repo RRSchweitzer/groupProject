@@ -1,7 +1,7 @@
 var app = angular.module('group');
 
-app.controller('homeCtrl', function($scope, $log, $location, projectService) {
-
+app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects) {
+  
   $scope.go = function () {
     $location.path('/register');
   };
@@ -12,16 +12,30 @@ app.controller('homeCtrl', function($scope, $log, $location, projectService) {
     }, 1500);
   });
 
+  $scope.randomProjects = getRandomProjects;
+  console.log($scope.randomProjects)
+//menu dropdown in index.hmtl js
+  $scope.status = {
+    isopen: false
+  };
 
-  // $scope.getRandomProject = function() {
-  //   projectService.getProjects().then(function(res) {
-  //     console.log("this is res.data from homeCtrl")
-  //     console.log(res.data)
+  $scope.toggled = function(open) {
+    $log.log('Dropdown is now: ', open);
+  };
 
-  //     };
-
-  //    $scope.randomProject = res.data;
+  $scope.toggleDropdown = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+    $scope.status.isopen = !$scope.status.isopen;
+  };
+  // $scope.getRandomProjects = function() {
+  //  projectService.getRandomProjects().then(function(res) {
+  //    console.log("Random Project: ")
+  //    console.log(res.data);
+  //    $scope.randomProjects = res.data;
   //  })
   // }
-  // $scope.getRandomProject();
+  // $scope.getRandomProjects();
+
 });
+

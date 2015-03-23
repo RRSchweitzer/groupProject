@@ -1,9 +1,9 @@
-<div id="header-wrapper" ng-controller="homeCtrl">
+<div id="header-wrapper">
 				<header id="header" class="container">
 				
 					<!-- Logo -->
 						<div id="logo">
-							<h1>App Name</h1>
+							<h1><a href="#/">ngShowCase()</a></h1>
 						</div>
 					
 					<!-- Nav -->
@@ -27,10 +27,10 @@
 										<li><a href="#">Veroeros feugiat</a></li>
 									</ul>
 								</li> -->
-								<li><a href="#/">Home</a></li>
+							<!-- 	<li><a href="#/">Home</a></li>
 								<li><a href="right-sidebar.html">Dashboard</a></li>
 								<li><a href="no-sidebar.html">Sign in with Github</a></li>
-								<li><a href="left-sidebar.html"></a></li>
+								<li><a href="left-sidebar.html"></a></li> -->
 							</ul>
 						</nav>
 					
@@ -40,7 +40,7 @@
 <div class='github-icon'>
 	<ul>
 		<form method="get" action="/auth/github">
-			<button class="btn btn-social btn-github">
+			<button class="btn btn-social btn-github" ng-click='login('>
 	  		<i class="fa fa-github"></i> Sign in with Github
 			</button>
 		</form>

@@ -1,15 +1,15 @@
 var app = angular.module('group');
 
-app.controller('projectModalCtrl', function($scope, $modalInstance, userObj) {
-
-	console.log(userObj)
+app.controller('projectModalCtrl', function($scope, $modalInstance) {
 
 
 	$scope.submit = function  () {
 		var projectObj = {
 			projectName: $scope.name,
-			projectUrl: $scope.url,
+			url: $scope.url,
+			languagesFrameworks: $scope.languagesFrameworks,
 			description: $scope.description
+			
 		}
 
 		$modalInstance.close(projectObj)

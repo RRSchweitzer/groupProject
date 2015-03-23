@@ -1,23 +1,19 @@
 <!-- header --> 
-	<div id="header-wrapper" ng-controller="homeCtrl">
+	<div id="header-wrapper">
 				<header id="header" class="container">
 				
 					<!-- Logo -->
 						<div id="logo">
-							<h1>showCase()</h1>
+							<h1><a href="#/">ngShowCase()</a></h1>
 						</div>
 					
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="#/">Home</a></li>
-								<li><a href="right-sidebar.html">Dashboard</a></li>
 								<li><a href="#/projects">Projects</a></li>
-								<li><a href="no-sidebar.html">Sign in with Github</a></li>
-								<li><a href="left-sidebar.html">Logout</a></li>
+								<li><a href="/auth/github">Sign in with Github</a></li>
 							</ul>
 						</nav>
-					
 				</header>
 			</div>
 		
@@ -31,8 +27,12 @@
 						</div>
 						<div class="5u">
 							<ul>
+<!-- <<<<<<< HEAD
 								<li class="button big icon fa-arrow-circle-right" ng-click="go('#/register')">Ok let's go</li>
 								<lia class="button alt big icon fa-question-circle">More info</li>
+======= -->
+								<li><a href="#/projects" class="button big icon fa-arrow-circle-right">Ok let's go</a></li>
+								<li><a href="#" class="button alt big icon fa-question-circle">More info</a></li>
 							</ul>
 						</div>
 					</div>
@@ -46,8 +46,8 @@
 						<div class="4u">
 						
 							<!-- Box -->
-								<section class="box feature">
-									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+								<section class="box feature last">
+									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
 									<div class="inner">
 										<header>
 											<h2>project name</h2>
@@ -62,7 +62,7 @@
 						
 							<!-- Box -->
 								<section class="box feature">
-									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
 									<div class="inner">
 										<header>
 											<h2>Project Name</h2>
@@ -75,12 +75,11 @@
 						</div>
 						<div class="4u">
 						
-							<!-- Box -->
 								<section class="box feature last">
-									<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
 									<div class="inner">
 										<header>
-											<h2></h2>
+											<h2>{{randomProjects[2].user.name}}</h2>
 											<p>Here's another intriguing subtitle</p>
 										</header>
 										<p></p>
@@ -104,16 +103,25 @@
 										<h3></h3>
 										<div class="grid">
 											<div class="row no-collapse 50%">
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
-											</div>
+												<div class="6u">
+														<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
+												</div>
+												<div class="6u">
+														<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
+												</div>
 											<div class="row no-collapse 50%">
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
-												<div class="6u"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
+												<div class="6u">
+													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
+												</div>
+												<div class="6u">
+													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[3].img}}" alt="" /></a>
+												</div>
+											</div>
 											</div>
 										</div>
-										<a href="#/projects" class="button icon fa-file-text-o">Browse Projects</a>
-									</section>
+											</section>
+											<a href="#/projects" class="button icon fa-file-text-o">More</a>
+											</section>
 								</div>
 						
 						</div>

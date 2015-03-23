@@ -2,12 +2,14 @@ var app = angular.module('group');
 
 
 app.controller('registerCtrl', function($scope, $log, $modal, $location, registerService) {
+
 		$scope.bootcamps = registerService.getBootcamps()
 			.then(function(res) {
 				console.log("this is res.data")
 				console.log(res.data)
 				return res.data
 			})
+
 		$scope.user = registerService.getUser().then(function (res) {
 			return res.data;
 		})
@@ -17,24 +19,21 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 			templateUrl: 'js/modals/userModalTmpl.html',
 			controller: 'userModalCtrl',
 			windowClass: 'modals',
-			size: 'lg',
+			size: 'md',
 			resolve: {
 				userObj: function () {
 					return $scope.user;
 				},
 				bootcampsObj: function () {
-					return $scope.bootcamps
+					return $scope.bootcamps;
 				}
 			}
 		})
-
 		modalInstance.result.then(function(data) {
 			registerService.saveUser(data)
 			.then(function (res) {
 				$location.path('/projects')
-				return res
 		})
-			
 		})
 	} 
 
@@ -42,7 +41,7 @@ app.controller('registerCtrl', function($scope, $log, $modal, $location, registe
 		var modalInstance = $modal.open({
 			templateUrl: 'js/modals/bootcampModalTmpl.html',
 			controller: 'bootcampModalCtrl',
-			size: 'lg',
+			size: 'md',
 			resolve: {
 				bootcampObj: function () {
 					return $scope.user;
