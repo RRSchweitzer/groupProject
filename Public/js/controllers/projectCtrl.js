@@ -37,6 +37,8 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService, re
 		})
 	}
 	$scope.getProjects();
+
+
 	
 
 })

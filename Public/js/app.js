@@ -6,6 +6,11 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 		.when('/', {
 			templateUrl: "js/views/homeTmpl.html",
 			controller:  "homeCtrl"
+			// resolve: {
+			// 	projects: function(projectService) {
+			// 		return projectService.getRandomProject();
+			// 	}
+			
 		})
 		.when('/register', {
 			templateUrl: 'js/views/registerTmpl.html',
