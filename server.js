@@ -61,14 +61,22 @@ app.post('/api/user', registerCtrl.updateOrCreate)
 app.post('/api/user/saveProject', projectCtrl.saveProject)
 app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
 app.get('/api/randomProjects', projectCtrl.getRandomProjects)
+
 app.get('/api/project', projectCtrl.getProjects);
 app.get('/api/user/projects', userCtrl.getProjects);
 app.delete('/api/user/projects/:imgId', userCtrl.removeProject);
+app.post('/api/project/vote', projectCtrl.submitVote);
+
 app.get('/api/getBootcamps', bootcampCtrl.getBootcamps);
 app.get('/api/bootcampUsers', bootcampCtrl.getUsers);
+app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
+app.post('/api/bootcamp/verify/student', bootcampCtrl.verifyStudent);
+app.post('/api/bootcamp/unverify/student', bootcampCtrl.unverifyStudent);
 
-
-
+app.get('/api/user/logout', function(req, res){
+	  req.logout();
+	  res.redirect('/');
+	})
 
 //Github Login
 Passport.use(new GithubStrategy({

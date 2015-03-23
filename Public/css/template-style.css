@@ -303,6 +303,7 @@
 				display: block;
 				width: 100%;
 				border-radius: 8px;
+				border: 1px solid hsl(0,0%,52%);
 			}
 
 			.image.fit

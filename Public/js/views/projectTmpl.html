@@ -1,5 +1,5 @@
 
-<div id="header-wrapper" ng-controller="homeCtrl">
+<div id="header-wrapper">
 	<header id="header" class="container">			
 	<!-- Logo -->
 		<div id="logo">
@@ -8,11 +8,12 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li><a href="/auth/github">Logout</a></li>
+				<li><a ng-click="logout()">Logout</a></li>
 			</ul>
 		</nav>				
 	</header>
 </div>
+
 
 <div class='loading-overlay' ng-show='showSpinner'>
 	<cube-grid-spinner></cube-grid-spinner>
@@ -22,24 +23,21 @@
 <div class="container register-buttons">
 	<button ng-click='openProject()' class='btn btn-danger btn-lg btn-block'>Share Project</button>
 </div>
+
 <div class='container main-container'>
-	<div class='project-container' ng-repeat="project in projects">
+	<div class='project-container' ng-repeat="project in projects | orderBy: '-votes'">
 		<ul class="grid cs-style-1">
 			<li>
 				<figure>
 					<img class="project-img" ng-src="data:image/png;base64,{{project.img}}" alt="img01">
 					<figcaption>
-						<h3>{{project.user.name}}</h3>
-						<span>Jacob Cummings</span>
-						<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+						<h3>{{project.projectName}}</h3>
+						<span>{{project.user.name}}</span>
+						<a href="http://{{project.url}}" target='_blank'>{{project.url}}</a>
 					</figcaption>
 				</figure>
 			</li>
 		</ul>
+		<div><button ng-click='submitVote(project)' class='glyphicon glyphicon-thumbs-up'></button>{{ project.votes}}</div>
 	</div>
 </div>
-
-<!-- <img width='800' height='600' alt='Your description' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' />
-
-<img style='width:800px; height:800px' alt='Your escription' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' /> -->
-

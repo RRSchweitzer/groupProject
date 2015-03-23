@@ -1,5 +1,5 @@
 
-<div id="header-wrapper" ng-controller="homeCtrl">
+<div id="header-wrapper">
 	<header id="header" class="container">
 		<!-- Logo -->
 			<div id="logo">
@@ -9,7 +9,7 @@
 		<nav id="nav">
 			<ul>
 				<li><a href="#/projects">Projects</a></li>
-				<li><a href="/auth/github">Logout</a></li>
+				<li><a ng-click="logout()">Logout</a></li>
 			</ul>
 		</nav>	
 	</header>
@@ -17,10 +17,12 @@
 
 
 <div clas='user' ng-repeat='student in unverified track by $index'>
-	<div class='student'>{{student.bio}}
+
+	<div class='student'>{{student.name}}
+	<img height='75px' width='75px' ng-src='{{student.profilePic}}'>
 	</div>
 	<div class="four">
-	  <div class="button-wrap" ng-class="{ 'button-active' : unverifiedActive}" ng-click='toggleUnverified(student)'>
+	  <div class="button-wrap" ng-class="{ 'button-active' : unverifiedActive}" ng-click='verify(student)' ng-click='unverifiedActive= !unverifiedActive'>
 	    <div class="button-bg">
 	      <div class="button-out"></div>
 	      <div class="button-in"></div>
@@ -30,11 +32,13 @@
 	</div>
 </div>
 
-<div clas='user' ng-repeat='student in verified track by $index'>
-	<div class='student'>{{student.bio}}
+
+<div clas='user' ng-repeat='student in verified'>
+	<div class='student'>{{student.name}}
+	<img  height='75px' width='75px' ng-src='{{student.profilePic}}'
 	</div>
 	<div class="four">
-	  <div class="button-wrap" ng-class="{ 'button-active' : verifiedActive}" ng-click='toggleVerified(student)'>
+	  <div class="button-wrap" ng-class="{ 'button-active' : verifiedActive}" ng-click='unverify(student)' ng-click='verifiedActive= !verifiedActive' >
 	    <div class="button-bg">
 	      <div class="button-out"></div>
 	      <div class="button-in"></div>
