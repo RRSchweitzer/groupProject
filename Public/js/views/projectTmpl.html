@@ -33,6 +33,7 @@
 					<figcaption>
 						<h3>{{project.projectName}}</h3>
 						<span>{{project.user.name}}</span>
+						<div ng-show='{{project.user.verified}}'>verified</div>
 						<a href="http://{{project.url}}" target='_blank'>{{project.url}}</a>
 					</figcaption>
 				</figure>
