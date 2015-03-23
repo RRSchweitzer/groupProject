@@ -20,11 +20,16 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService, re
 		modalInstance.result.then(function(projectObj) {
 			$scope.showSpinner = true;
 			projectService.saveProject(projectObj).then(function(res) {
-				$scope.getProjects();
+				console.log(res.data)
+				$scope.projects.push(res.data)
 				$scope.showSpinner = false;
 			})
 			})
 		}
+
+	$scope.getSubmittedProject = function() {
+		$scope.projects = projectService.getProjects()
+	}
 	
 	$scope.submitVote = function(project) {
 		var projectNoImg = {
