@@ -1,6 +1,17 @@
 var app = angular.module('group');
 
 app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects) {
+  
+  $scope.go = function () {
+    $location.path('/register');
+  };
+
+  $(".fa-question-circle").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#main-wrapper").offset().top
+    }, 1500);
+  });
+
   $scope.randomProjects = getRandomProjects;
   console.log($scope.randomProjects)
 //menu dropdown in index.hmtl js
@@ -26,4 +37,5 @@ app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects)
   // }
   // $scope.getRandomProjects();
 
-})
+});
+
