@@ -29,8 +29,8 @@
 									</ul>
 								</li> -->
 								<li><a href="#/">Home</a></li>
-								<li><a href="right-sidebar.html">Dashboard</a></li>
-								<li><a href="no-sidebar.html">Sign in with Github</a></li>
+								<li><a href="#/projects">Projects</a></li>
+								<li><a href="/auth/github">Sign in with Github</a></li>
 								<li><a href="left-sidebar.html"></a></li>
 							</ul>
 						</nav>
@@ -48,23 +48,19 @@
 	<button ng-click='openProject()' class='btn btn-danger btn-lg btn-block'>Share Project</button>
 </div>
 <div class='main-container'>
-	<div class='project-container' ng-repeat="project in projects">
+	<div class='project-container' ng-repeat="project in projects | orderBy: '-votes'">
 		<ul class="grid cs-style-1">
 			<li>
 				<figure>
 					<img class="project-img" ng-src="data:image/png;base64,{{project.img}}" alt="img01">
 					<figcaption>
-						<h3>{{project.user.name}}</h3>
-						<span>Jacob Cummings</span>
-						<a href="http://dribbble.com/shots/1115632-Camera">Take a look</a>
+						<h3>{{project.projectName}}</h3>
+						<span>{{project.user.name}}</span>
+						<a href="http://{{project.url}}" target='_blank'>{{project.url}}</a>
 					</figcaption>
 				</figure>
 			</li>
 		</ul>
+		<p>votes: {{project.votes}}</p><button ng-click='submitVote(project)' class='btn btn-default btn-danger'>Vote</button>
 	</div>
 </div>
-
-<!-- <img width='800' height='600' alt='Your description' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' />
-
-<img style='width:800px; height:800px' alt='Your escription' ng-src='http://example/img.jpg' spinkit-image-preloader='rotating-plane-spinner' /> -->
-

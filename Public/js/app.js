@@ -26,7 +26,13 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 		})
 		.when('/projects', {
 			templateUrl: "js/views/projectTmpl.html",
-			controller: "projectCtrl"
+			controller: "projectCtrl",
+			resolve: {
+				getProjects: function(projectService) {
+					return projectService.getProjects()
+				}
+
+			}
 		})
 		.when('/login', {
 			templateUrl: "js/views/loginTmpl.html",
