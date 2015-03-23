@@ -32,3 +32,19 @@ git </div>
 	</div>
 </div>
 
+<div class='user' ng-repeat='student in verified track by $index'>
+
+	<div class='student'>{{student.name}}
+		<img height='75px' width='75px' ng-src='{{student.profilePic}}'>
+	</div>
+	<div class="four">
+	  <div class="button-wrap" ng-class="{ 'button-active' : verifiedActive}" ng-click='unverify(student)' ng-click='verifiedActive= !verifiedActive'>
+	    <div class="button-bg">
+	      <div class="button-out"></div>
+	      <div class="button-in"></div>
+	      <div class="button-switch"></div>
+	    </div>
+	  </div>
+	</div>
+</div>
+
