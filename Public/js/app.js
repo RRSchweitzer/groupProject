@@ -5,7 +5,12 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 		$routeProvider
 		.when('/', {
 			templateUrl: "js/views/homeTmpl.html",
-			controller:  "homeCtrl"
+			controller:  "homeCtrl",
+			resolve: {
+				getRandomProjects: function(projectService) {
+					return projectService.getRandomProjects()
+				}
+			}
 		})
 		.when('/register', {
 			templateUrl: 'js/views/registerTmpl.html',
@@ -31,7 +36,6 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 				getProjects: function(projectService) {
 					return projectService.getProjects()
 				}
-
 			}
 		})
 		.when('/login', {

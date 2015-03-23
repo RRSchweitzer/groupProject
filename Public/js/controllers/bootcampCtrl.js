@@ -1,6 +1,6 @@
 var app = angular.module('group');
 
-app.controller('bootcampCtrl',function($scope, bootcampService, getUsers) {
+app.controller('bootcampCtrl',function($scope, bootcampService, getUsers, loginService) {
 	$scope.unverified = getUsers[0];
   	$scope.verified = getUsers[1];
 
@@ -25,5 +25,10 @@ app.controller('bootcampCtrl',function($scope, bootcampService, getUsers) {
 		$scope.unverified.push(student);
 		console.log($scope.unverified);	
 	}
+
+			$scope.logout = function () {
+			loginService.logout()
+		}
+
 
 })
