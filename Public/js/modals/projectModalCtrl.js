@@ -9,7 +9,6 @@ app.controller('projectModalCtrl', function($scope, $modalInstance) {
 			url: $scope.url,
 			languagesFrameworks: $scope.languagesFrameworks,
 			description: $scope.description
-			
 		}
 
 		$modalInstance.close(projectObj)

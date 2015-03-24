@@ -26,7 +26,7 @@
 				<div class="5u">
 					<ul>
 						<li><a href="#/projects" class="button big icon fa-arrow-circle-right">Ok let's go</a></li>
-						<li><a href="#" class="button alt big icon fa-question-circle">More info</a></li>
+						<li><a href="" class="button alt big icon fa-question-circle">More info</a></li>
 					</ul>
 				</div>
 			</div>
@@ -44,10 +44,9 @@
 								<a href="{{randomProjects[0].url}}" target="_blank" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
 								<div class="inner">
 									<header>
-										<h2>Random Project</h2>
-										<p>Maybe here as well I think</p>
+										<h2>{{randomProjects[0].projectName}}</h2>
 									</header>
-									<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
+									<p>By: {{randomProjects[0].user.name}}</p>
 								</div>
 							</section>
 
@@ -59,10 +58,9 @@
 								<a href="{{randomProjects[1].url}}" target="_blank" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
 								<div class="inner">
 									<header>
-										<h2>Random Project</h2>
-										<p>This is also an interesting subtitle</p>
+										<h2>{{randomProjects[1].projectName}}</h2>
 									</header>
-									<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
+									<p>By: {{randomProjects[1].user.name}}</p>
 								</div>
 							</section>
 
@@ -73,10 +71,9 @@
 								<a href="{{randomProjects[2].url}}" target="_blank" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
 								<div class="inner">
 									<header>
-										<h2>{{randomProjects[2].user.name}}</h2>
-										<p>Here's another intriguing subtitle</p>
+										<h2>{{randomProjects[2].projectName}}</h2>
 									</header>
-									<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
+									<p>By: {{randomProjects[2].user.name}}</p>
 								</div>
 							</section>
 
@@ -94,7 +91,7 @@
 							<!-- Sidebar -->
 								<div id="sidebar">
 									<section class="widget thumbnails">
-										<h3>Browse Projects</h3>
+										<h3></h3>
 										<div class="grid">
 											<div class="row no-collapse 50%">
 												<div class="6u">
@@ -111,11 +108,11 @@
 													<a href="{{randomProjects[3].url}}" target="_blank" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[3].img}}" alt="" /></a>
 												</div>
 											</div>
+											</div>
 										</div>
-										</div>
-										</section>
-										<a href="#/projects" class="button icon fa-file-text-o">More</a>
-									</section>
+											</section>
+											<a href="#/projects" class="button icon fa-file-text-o">More</a>
+											</section>
 								</div>
 						
 						</div>
