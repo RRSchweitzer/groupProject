@@ -1,20 +1,22 @@
 <!-- header --> 
 	<div id="header-wrapper">
 		<header id="header" class="container">
+		
 			<!-- Logo -->
 			<div id="logo">
 				<h1><a href="#/">ngShowCase()</a></h1>
-			</div>	
+			</div>
+			
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
 					<li><a href="#/projects">Projects</a></li>
-					<li><a href="/auth/github">Sign in with Github</a></li>
+					<li ng-show='!loggedIn'><a href="/auth/github">Sign in with Github</a></li>
+					<li ng-show='loggedIn'><a href='/api/user/logout'>Logout</a></li>
 				</ul>
 			</nav>
 		</header>
 	</div>
-		
 	<!-- Banner -->
 	<div id="banner-wrapper">
 		<div id="banner" class="box container">

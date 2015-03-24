@@ -53,14 +53,16 @@ Passport.deserializeUser(function(obj, done) {
 
 
 //endpoints
-app.get('/api/user/userInfo', function (req, res) {
+app.get('/logout', function (req, res) {
 	res.status(200).json(req.user)
 })
 
-app.post('/api/user', registerCtrl.updateOrCreate)
-app.post('/api/user/saveProject', projectCtrl.saveProject)
-app.post('/api/bootcamp', bootcampCtrl.updateOrCreate)
-app.get('/api/randomProjects', projectCtrl.getRandomProjects)
+app.get('/api/user/dashboardLink', registerCtrl.dashboardLink);
+app.get('/api/user/isLoggedIn', registerCtrl.isLoggedIn);
+app.get('/api/randomProjects', projectCtrl.getRandomProjects);
+app.post('/api/user', registerCtrl.updateOrCreate);
+app.post('/api/user/saveProject', projectCtrl.saveProject);
+app.post('/api/bootcamp', bootcampCtrl.updateOrCreate);
 
 app.get('/api/projects', projectCtrl.getProjects);
 app.get('/api/user/projects', userCtrl.getProjects);

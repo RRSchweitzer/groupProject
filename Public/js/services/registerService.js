@@ -1,6 +1,6 @@
 var app = angular.module('group');
 
-app.service('registerService', function($http, $location) {
+app.service('registerService', function($http, $location, $q) {
 
 	this.getUser = function () {
 		return $http({
@@ -31,5 +31,21 @@ app.service('registerService', function($http, $location) {
 			url: 'api/getBootcamps'
 		})
 	}	
+
+	this.isLoggedIn = function () {
+		var dfd = $q.defer();
+		$http({
+			method: 'GET',
+			url: 'api/user/isLoggedIn'
+		}).then(function(res) {
+			console.log(res)
+			if(res.status === 200) {
+				return dfd.resolve(true)
+			} else {
+				return dfd.resolve(false)
+			}
+		})
+		return dfd.promise
+	}
 
 })
