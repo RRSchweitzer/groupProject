@@ -2,6 +2,8 @@ var app = angular.module('group');
 
 app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects) {
   $scope.randomProjects = getRandomProjects;
+  // $scope.topProjects = getTopProjects;
+
   console.log($scope.randomProjects)
 //menu dropdown in index.hmtl js
   $scope.status = {
@@ -17,6 +19,9 @@ app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects)
     $event.stopPropagation();
     $scope.status.isopen = !$scope.status.isopen;
   };
+
+
+
   // $scope.getRandomProjects = function() {
   //  projectService.getRandomProjects().then(function(res) {
   //    console.log("Random Project: ")
