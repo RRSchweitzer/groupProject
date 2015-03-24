@@ -1,10 +1,6 @@
 var app = angular.module('group');
 
 app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects) {
-  
-  $scope.go = function () {
-    $location.path('/register');
-  };
 
   $(".fa-question-circle").click(function() {
     $('html, body').animate({
