@@ -1,5 +1,6 @@
 var app = angular.module('group');
 
+
 app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects, isLoggedIn, loginService) {
   console.log(isLoggedIn)
   $scope.loggedIn = isLoggedIn;

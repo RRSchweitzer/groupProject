@@ -1,7 +1,7 @@
 {
   "name": "groupProject",
   "version": "0.0.0",
-  "description": "",
+  "description": "git workflow",
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.12.0",
@@ -9,6 +9,7 @@
     "express-session": "^1.10.3",
     "mongoose": "^3.8.24",
     "mongoose-random": "^0.1.1",
+    "nodemon": "^1.3.7",
     "passport": "^0.2.1",
     "passport-github": "^0.1.5",
     "q": "^1.2.0",
@@ -21,5 +22,13 @@
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gyypo/groupProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gyypo/groupProject/issues"
+  },
+  "homepage": "https://github.com/gyypo/groupProject"
 }
