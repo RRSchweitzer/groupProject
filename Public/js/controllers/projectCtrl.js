@@ -32,22 +32,13 @@ app.controller('projectCtrl', function ($scope, $modal, $log, projectService, re
 	}
 	
 	$scope.submitVote = function(project) {
-		var projectNoImg = {
-			_id: project._id,
-			votes: project.votes
-		}
-		var updatedProject = {
-			_v: project._v,
-			_id: project._id,
-			img: project.img,
-			projectName: project.projectName,
-			url: project.url,
-			user: project.user,
-			votes: project.votes += 1
-		}
-		$scope.projects.splice($scope.projects.indexOf(project), 1)
-		$scope.projects.push(updatedProject)
-		projectService.submitVote(projectNoImg).then(function(res) {
+		projectService.submitVote(project).then(function(res) {
+			if(res === false) {
+				console.log('You already voted on that project!!!!')
+			} else {
+				$scope.projects.splice($scope.projects.indexOf(project), 1)
+				$scope.projects.push(res.data)	
+			}
 		})
 	}
 

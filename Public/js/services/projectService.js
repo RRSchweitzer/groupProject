@@ -20,13 +20,28 @@ app.service('projectService', function($http, $q) {
 		})
 		return dfd.promise;
 	}
+
 	this.submitVote = function (project) {
-		return $http({
+		var projectNoImg = {
+			_id: project._id,
+			votes: project.votes
+		};
+
+		var dfd = $q.defer();
+		$http({
 			method: 'POST',
 			url: 'api/project/vote',
-			data: project
+			data: projectNoImg
+		}).then(function(res) {
+			if(res.status === 204) {
+				dfd.resolve(false)
+			} else if (res.status === 200) {
+				dfd.resolve(res)
+			}
 		})
+		return dfd.promise;
 	}
+
 	this.getRandomProjects = function () {
 		var dfd = $q.defer();
 		$http({
