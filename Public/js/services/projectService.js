@@ -2,6 +2,18 @@ var app = angular.module('group');
 
 app.service('projectService', function($http, $q) {
 
+	this.dashboardLink = function () {
+		var dfd = $q.defer();
+		$http({
+			method: 'GET',
+			url: 'api/user/dashboardLink'
+		}).then(function(res) {
+			console.log(res.data)
+			return dfd.resolve(res.data)
+		})
+		return dfd.promise
+	}
+
 	this.saveProject = function (projectObj) {
 		return $http({
 			method: 'POST',

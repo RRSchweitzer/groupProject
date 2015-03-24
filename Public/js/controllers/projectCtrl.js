@@ -1,8 +1,9 @@
 var app = angular.module('group');
 
-app.controller('projectCtrl', function ($scope, $modal, $log, projectService, registerService, getProjects, loginService) {
+app.controller('projectCtrl', function ($scope, $modal, $log, isLoggedIn, projectService, registerService, getProjects, loginService, dashboardLink) {
+	$scope.loggedIn = isLoggedIn;
+	$scope.dashboardLink = dashboardLink;
 	$scope.projects = getProjects;
-
 	$scope.showSpinner = false;
 
 		$scope.user = registerService.getUser().then(function (res) {

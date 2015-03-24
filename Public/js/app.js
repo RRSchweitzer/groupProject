@@ -9,6 +9,9 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 			resolve: {
 				getRandomProjects: function(projectService) {
 					return projectService.getRandomProjects()
+				},
+				isLoggedIn: function(registerService) {
+					return registerService.isLoggedIn()
 				}
 			}
 		})
@@ -35,6 +38,12 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 			resolve: {
 				getProjects: function(projectService) {
 					return projectService.getProjects()
+				},
+				isLoggedIn: function(registerService) {
+					return registerService.isLoggedIn()
+				},
+				dashboardLink: function(projectService) {
+					return projectService.dashboardLink()
 				}
 			}
 		})

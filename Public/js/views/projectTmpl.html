@@ -8,7 +8,9 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li><a ng-click="logout()">Logout</a></li>
+				<li ng-show='dashboardLink'><a href="{{dashboardLink}}">Dashboard</a></li>
+				<li ng-show='!loggedIn'><a href='/auth/github'>Sign in with Github</a></li>
+				<li ng-show='loggedIn'><a href="/api/user/logout">Logout</a></li>
 			</ul>
 		</nav>				
 	</header>
@@ -21,7 +23,7 @@
 </div>
 
 
-<div class="container register-buttons">
+<div ng-show='dashboardLink' class="container register-buttons">
 	<button ng-click='openProject()' class='btn btn-danger btn-lg btn-block'>Share Project</button>
 </div>
 
@@ -35,7 +37,7 @@
 						<h3>{{project.projectName}}</h3>
 						<span>{{project.user.name}}</span>
 						<div ng-show='{{project.user.verified}}'>verified</div>
-						<a href="http://{{project.url}}" target='_blank'>{{project.url}}</a>
+						<a href="http://{{project.url}}" target='_blank'>Check it out</a>
 					</figcaption>
 				</figure>
 			</li>
