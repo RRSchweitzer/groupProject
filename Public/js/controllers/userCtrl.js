@@ -1,6 +1,6 @@
 var app = angular.module('group');
 
-app.controller('userCtrl', function($scope, userService) {
+app.controller('userCtrl', function($scope, userService, loginService) {
 	$scope.getProjects = function() {
 		userService.getProjects().then(function(res) {
 			console.log(res)
@@ -14,5 +14,7 @@ app.controller('userCtrl', function($scope, userService) {
 			$scope.getProjects();
 		})
 	}
-
+	$scope.logout = function () {
+		loginService.logout()
+	}
 })

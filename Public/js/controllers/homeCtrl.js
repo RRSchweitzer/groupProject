@@ -1,6 +1,17 @@
 var app = angular.module('group');
 
-app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects) {
+
+app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects, isLoggedIn, loginService) {
+  console.log(isLoggedIn)
+  $scope.loggedIn = isLoggedIn;
+
+  $scope.logout = function() {
+    loginService.logout();
+  };
+
+  $scope.go = function () {
+    $location.path('/register');
+  };
 
   $(".fa-question-circle").click(function() {
     $('html, body').animate({
@@ -9,6 +20,8 @@ app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects)
   });
 
   $scope.randomProjects = getRandomProjects;
+  // $scope.topProjects = getTopProjects;
+
   console.log($scope.randomProjects)
 //menu dropdown in index.hmtl js
   $scope.status = {
@@ -24,14 +37,6 @@ app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects)
     $event.stopPropagation();
     $scope.status.isopen = !$scope.status.isopen;
   };
-  // $scope.getRandomProjects = function() {
-  //  projectService.getRandomProjects().then(function(res) {
-  //    console.log("Random Project: ")
-  //    console.log(res.data);
-  //    $scope.randomProjects = res.data;
-  //  })
-  // }
-  // $scope.getRandomProjects();
 
 });
 

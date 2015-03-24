@@ -1,96 +1,87 @@
 <!-- header --> 
 	<div id="header-wrapper">
-				<header id="header" class="container">
-				
-					<!-- Logo -->
-						<div id="logo">
-							<h1><a href="#/">ngShowCase()</a></h1>
-						</div>
+		<header id="header" class="container">
+			<!-- Logo -->
+			<div id="logo">
+				<h1><a href="#/">ngShowCase()</a></h1>
+			</div>
+			
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="#/projects">Projects</a></li>
+					<li ng-show='!loggedIn'><a href="/auth/github">Sign in with Github</a></li>
+					<li ng-show='loggedIn'><a href='/api/user/logout'>Logout</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+	<!-- Banner -->
+	<div id="banner-wrapper">
+		<div id="banner" class="box container">
+			<div class="row">
+				<div class="7u">
+					<h2>Hi. This is ngShowCase()</h2>
+					<p>A place for programming bootcamp students to show off their work!</p>
+				</div>
+				<div class="5u">
+					<ul>
+						<li><a href="#/projects" class="button big icon fa-arrow-circle-right">Ok let's go</a></li>
+						<li><a href="" class="button alt big icon fa-question-circle">More info</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+		
+	<!-- Features -->
+		<div id="features-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="4u">
 					
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#/projects">Projects</a></li>
-								<li><a href="/auth/github">Sign in with Github</a></li>
-							</ul>
-						</nav>
-				</header>
-			</div>
-		
-		<!-- Banner -->
-			<div id="banner-wrapper">
-				<div id="banner" class="box container">
-					<div class="row">
-						<div class="7u">
-							<h2>Hi. This is showCase()</h2>
-							<p>A place for programming bootcamp students to show off their work</p>
-						</div>
-						<div class="5u">
-							<ul>
+						<!-- Box -->
+							<section class="box feature last">
+								<a href="{{randomProjects[0].url}}" target="_blank" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
+								<div class="inner">
+									<header>
+										<h2>{{randomProjects[0].projectName}}</h2>
+									</header>
+									<p>By: {{randomProjects[0].user.name}}</p>
+								</div>
+							</section>
 
-								<!-- <li class="button big icon fa-arrow-circle-right" ng-click="go('#/register')">Ok let's go</li> -->	
-								<li><a href="#/projects" class="button big icon fa-arrow-circle-right">Ok let's go</a></li>
-								<li class="button alt big icon fa-question-circle">More info</li>
+					</div>
+					<div class="4u">
+					
+						<!-- Box -->
+							<section class="box feature">
+								<a href="{{randomProjects[1].url}}" target="_blank" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
+								<div class="inner">
+									<header>
+										<h2>{{randomProjects[1].projectName}}</h2>
+									</header>
+									<p>By: {{randomProjects[1].user.name}}</p>
+								</div>
+							</section>
 
-								<!-- <li><a href="#/projects" class="button big icon fa-arrow-circle-right">Ok let's go</a></li>
-								<li><a href="#" class="button alt big icon fa-question-circle">More info</a></li> -->
-							</ul>
-						</div>
+					</div>
+					<div class="4u">
+					
+							<section class="box feature last">
+								<a href="{{randomProjects[2].url}}" target="_blank" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
+								<div class="inner">
+									<header>
+										<h2>{{randomProjects[2].projectName}}</h2>
+									</header>
+									<p>By: {{randomProjects[2].user.name}}</p>
+								</div>
+							</section>
+
 					</div>
 				</div>
 			</div>
-		
-	<!-- 	Features -->
-			<div id="features-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="4u">
-						
-					<!-- 		Box -->
-								<section class="box feature last">
-									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
-									<div class="inner">
-										<header>
-											<h2>project name</h2>
-											<p>Maybe here as well I think</p>
-										</header>
-										<p>about project</p>
-									</div>
-								</section>
-
-						</div>
-						<div class="4u">
-						
-					<!-- 		Box -->
-								<section class="box feature">
-									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
-									<div class="inner">
-										<header>
-											<h2>Project Name</h2>
-											<p>This is also an interesting subtitle</p>
-										</header>
-										<p>something</p>
-									</div>
-								</section>
-
-						</div>
-						<div class="4u">
-						
-								<section class="box feature last">
-									<a href="#" class="image featured"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
-									<div class="inner">
-										<header>
-											<h2>{{randomProjects[2].user.name}}</h2>
-											<p>Here's another intriguing subtitle</p>
-										</header>
-										<p></p>
-									</div>
-								</section>
-
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
 
 	<!-- 	Main -->
 			<div id="main-wrapper">
@@ -105,17 +96,17 @@
 										<div class="grid">
 											<div class="row no-collapse 50%">
 												<div class="6u">
-														<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
+													<a href="{{randomProjects[0].url}}"  target="_blank" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[0].img}}" alt="" /></a>
 												</div>
 												<div class="6u">
-														<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
-												</div>
+													<a href="{{randomProjects[1].url}}"  target="_blank" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[1].img}}" alt="" /></a>
+											</div>
 											<div class="row no-collapse 50%">
 												<div class="6u">
-													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
+													<a href="{{randomProjects[2].url}}" target="_blank" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[2].img}}" alt="" /></a>
 												</div>
 												<div class="6u">
-													<a href="#" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[3].img}}" alt="" /></a>
+													<a href="{{randomProjects[3].url}}" target="_blank" class="image fit"><img ng-src="data:image/png;base64,{{randomProjects[3].img}}" alt="" /></a>
 												</div>
 											</div>
 											</div>
