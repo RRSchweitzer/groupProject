@@ -5,7 +5,7 @@ app.controller('homeCtrl', function ($scope, $log, $location, getRandomProjects,
   $scope.loggedIn = isLoggedIn;
 
   $scope.logout = function() {
-    loginService.logout();
+    loginService.logout()
   };
 
   $scope.go = function () {
