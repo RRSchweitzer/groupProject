@@ -38,7 +38,6 @@ app.service('projectService', function($http, $q) {
 			_id: project._id,
 			votes: project.votes
 		};
-
 		var dfd = $q.defer();
 		$http({
 			method: 'POST',

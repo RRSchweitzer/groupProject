@@ -12,6 +12,9 @@ var app = angular.module('group', ['ngRoute','ui.bootstrap', 'angular-spinkit', 
 				},
 				isLoggedIn: function(registerService) {
 					return registerService.isLoggedIn()
+				},
+				dashboardLink: function(projectService) {
+					return projectService.dashboardLink()
 				}
 			}
 		})

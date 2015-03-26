@@ -1,7 +1,6 @@
 <!-- header --> 
 	<div id="header-wrapper">
 		<header id="header" class="container">
-		
 			<!-- Logo -->
 			<div id="logo">
 				<h1><a href="#/">ngShowCase()</a></h1>
@@ -11,6 +10,7 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="#/projects">Projects</a></li>
+					<li ng-show='dashboardLink'><a href="{{dashboardLink}}">Dashboard</a></li>
 					<li ng-show='!loggedIn'><a href="/auth/github">Sign in with Github</a></li>
 					<li ng-show='loggedIn'><a href='/api/user/logout'>Logout</a></li>
 				</ul>
@@ -84,13 +84,13 @@
 			</div>
 		</div>
 
-		<!-- Main -->
+	<!-- 	Main -->
 			<div id="main-wrapper">
 				<div class="container">
 					<div class="row">
 						<div class="4u">
 						
-							<!-- Sidebar -->
+						<!-- 	Sidebar -->
 								<div id="sidebar">
 									<section class="widget thumbnails">
 										<h3></h3>
@@ -113,20 +113,19 @@
 											</div>
 										</div>
 											</section>
-											<a href="#/projects" class="button icon fa-file-text-o">More</a>
+											<a href="#/projects" class="button icon fa-file-text-o">Browse Projects</a>
 											</section>
 								</div>
 						
 						</div>
 						<div class="8u important(collapse)">
 
-							<!-- Content -->
+						<!-- 	Content -->
 								<div id="content">
 									<section class="last">
 										<h2>So what's this all about?</h2>
-										<p>This is <strong>RYAN SCHWEITZER</strong> Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
-										<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
-										<!-- <a href="#" class="button icon fa-arrow-circle-right">Continue Reading</a> -->
+										<!-- <p>This is <strong>ngShowCase()</strong>.</p> -->
+										<p>Born out of the frustration of researching programming bootcamps and being unable to check out projects from previous students. <strong>ngShowCase()</strong> was created as a platform for bootcamp students to show off their work and for prospective students to browse projects by from bootcamps they are interested in attending.</p>
 									</section>
 								</div>
 

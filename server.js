@@ -5,8 +5,6 @@ var Passport = require('passport');
 var Session = require('express-session');
 var request = require('request');
 var GithubStrategy = require('passport-github').Strategy;
-var logout = require('express-passport-logout');
-
 
 //Express
 var port = 8888

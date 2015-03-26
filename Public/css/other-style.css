@@ -2,8 +2,6 @@
 
 
 /*register css-------------------*/
-
-
 .register_container {
   margin-top: 0px;
   width: 100%;
@@ -20,6 +18,12 @@
 .btn-lg {
   background-color: #0090C5;
   color: white;
+}
+
+.share {
+  width: 50%;
+  float: left;
+  font-family: 'cabin';
 }
 
 .register {
@@ -40,7 +44,7 @@
 }
 
 /*Modals*/
-.modal-content{
+.modal-content {
   margin-top: 20px;
   z-index: 10;
 }
@@ -76,7 +80,7 @@
   padding: 5px 5px;
 }*/
 
-.project-images{
+.project-images {
   height: 300px;
   width: 300px;
   margin: 10px;
@@ -112,14 +116,50 @@ body {
 }
 
 /*Students bootcamp dashboard*/
+.unverified-container {
+  width: 40%;
+  height: 100%;
+  float: left;
+  /*border: 1px solid black;*/
+  text-align: center;
+  background: white;
+  border-radius: 6px;
+  padding-top: 10px;
+  margin-left: 120px;
+}
+
+.verified-container {
+  width: 40%;
+  height: 100%;
+  float: right;
+  /*border: 1px solid black;*/
+  background: white;
+  text-align: center;
+  border-radius: 6px;
+  padding-top: 10px;
+  margin-right: 120px;
+}
+
 .user{
   display: flex;
   flex-direction: row;
-
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 
 .student{
+  font-family: 'cabin';
+  font-size: 20px;
 }
+
+.student_image {
+  border-radius: 6px;
+  margin-left: 5px;
+  margin-top: 0px;
+  height: 120px;
+  width: 120px;
+}
+
 
 /* BUTTON 4 */
 
@@ -131,10 +171,11 @@ body {
   width: 100px;
   margin: 40px auto 0;
   cursor: pointer;
+
 }
 .four .button-bg {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 50%;
   background-color: #bb2222;
   border-radius: 40px;
   padding: 3px;
@@ -144,14 +185,14 @@ body {
 .four .button-switch {
   position:relative;
   left:0px;
-  width: 44px;
-  height: 44px;
+  width: 20px;
+  height: 20px;
   border:solid 13px;
   background-color:#fff;
   border-radius: 36px;
   transition:all 0.2s ease;
 }
-.four .button-active .button-switch { left:50px; }
+.four .button-active .button-switch { left:50px;}
 .four .button-in, 
 .four .button-out {
   position:absolute; 
@@ -161,6 +202,7 @@ body {
   text-transform:uppercase;
   font-weight:bold;
 }
+
 .four .button-in { margin-left:76px; }
 .four .button-out { margin-left:18px; }
 .four .button-active .button-out {  }
